@@ -1,7 +1,7 @@
 <div class="container my-5">
   <mat-card>
-    <mat-card-title class="row my-4">Inicia Sesión</mat-card-title>
-    <mat-card-subtitle class="row my-3">Entérate de todas las novedades de tus autores favoritos</mat-card-subtitle>
+    <mat-card-title class="row my-4 text-center">Inicia Sesión</mat-card-title>
+    <mat-card-subtitle class="row my-3 text-center">Entérate de todas las novedades de tus autores favoritos</mat-card-subtitle>
     <form [formGroup]="frmLogin" (ngSubmit)="onSubmit(usuario.value, password.value)">
       <mat-form-field class="campos-field mt-3">
         <input matInput placeholder="Usuario" formControlName="usuario" #usuario>

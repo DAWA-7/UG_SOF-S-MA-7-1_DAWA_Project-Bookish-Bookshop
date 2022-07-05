@@ -5,18 +5,10 @@
 }
 
 .container{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-mat-card{
-    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 button{
