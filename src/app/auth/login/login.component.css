@@ -1,6 +1,6 @@
 .campos-field {
-    width: 60%;
-    margin-left: 20%;
+    width: 80%;
+    margin-left: 10%;
     margin-right: 20%;
 }
 
@@ -16,3 +16,11 @@ button{
     margin-left:25%;
     margin-right:25%;
 }
+
+
+.forgot-password{
+  font-family: var(--ff-fresca);
+  font-size: var(--fs-p);
+  color: var(--pc-amparo-blue);
+}
+

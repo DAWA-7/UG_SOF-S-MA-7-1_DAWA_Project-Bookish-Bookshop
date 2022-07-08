@@ -1,7 +1,7 @@
 import { AgregarUserComponent } from './user/agregar-user/agregar-user.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./auth/login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { HeaderComponent } from "./header/header.component";
 import { ListarCatalogoComponent } from './catalogo/listar-catalogo/listar-catalogo.component';
@@ -20,7 +20,7 @@ const routes:Routes=[
 @NgModule({
     imports:[RouterModule.forRoot(routes)],
     exports:[RouterModule]
-    
+
 })
 
 export class AppRouterModule{}
