@@ -1,0 +1,53 @@
+<div class="container my-5 ">
+  <mat-card class="border-top border-secondary">
+    <mat-card-title class="row my-4 text-center">Registro</mat-card-title>
+    <mat-card-subtitle class="row my-3 text-center">Entérate de todas las novedades de tus autores favoritos
+    </mat-card-subtitle>
+    <!--Formulario-->
+    <div class="row justify-content-md-center">
+      <form [formGroup]="frmLogin" (ngSubmit)="onSubmit()" class="col col-lg-6 col-md-8 col-sm-12">
+        <mat-form-field class="campos-field mt-3">
+          <input matInput placeholder="Nombres" formControlName="nombres" #nombre>
+        </mat-form-field>
+        <mat-form-field class="campos-field">
+          <input matInput placeholder="Apellidos" formControlName="apellidos" #apellidos>
+        </mat-form-field>
+        <mat-form-field class="campos-field">
+          <input matInput placeholder="Usuario" formControlName="usuario" #usuario>
+        </mat-form-field>
+        <!--Contraseña-->
+        <mat-form-field appearance="standard" class="campos-field">
+          <mat-label>Ingrese contraseña *</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" #password>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <!--Email-->
+        <mat-form-field appearance="legacy" class="campos-field">
+          <mat-label>Ingrese E-mail</mat-label>
+          <input matInput placeholder="kjkszpj@ug.edu.ec" formControlName="email" [formGroup]="frmLogin" required
+                 #email>
+          <mat-error
+            *ngIf="frmLogin != null && frmLogin.get('email')!.hasError('email')">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <!--FechaNac-->
+        <mat-form-field appearance="legacy" class="campos-field mt-3">
+          <mat-label>Fecha nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker1" [formControl]="date" #date1>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <p class="text-center my-2">
+          <mat-checkbox color="primary" class="align-items-center mt-3" #terms>
+          </mat-checkbox>
+          Al hacer clic en "Registrarte", aceptas nuestras Condiciones, la Política de datos y la Política de cookies.
+        </p>
+        <!--Buton de Registrar-->
+        <button class="my-2 button-register" mat-raised-button color="primary" [disabled]="!frmLogin.valid || !terms.checked" >Registrar</button>
+      </form>
+    </div>
+  </mat-card>
+</div>

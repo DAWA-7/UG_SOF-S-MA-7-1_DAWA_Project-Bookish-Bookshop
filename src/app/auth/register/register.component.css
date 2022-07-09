@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campos-field {
+  width: 70%;
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
+.button-register {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.form-register {
+  max-width: 500px;
+}
+
+.text-terms {
+  overflow-wrap:break-word;
+}
