@@ -15,7 +15,7 @@
           <a class="nav-link py-3 px-0 px-lg-3 rounded content" href="">Home</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded content" href="">Catálogo</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded content" [routerLink]="'/mostrar-catalogo'">Catálogo</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
           <a class="nav-link py-3 px-0 px-lg-3 rounded content" href="">Noticias</a>
@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="nav-item mx-0 mx-lg-1" *ngIf="isLogged === false">
-          <a  class="nav-link py-3 px-0 px-lg-3 rounded" (click)="sendLogin()">Inicia Sesión</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded" (click)="sendLogin()">Inicia Sesión</a>
         </li>
 
         <li class="nav-item mx-0 mx-lg-1" *ngIf="isLogged === true">
@@ -46,3 +46,45 @@
     </div>
   </div>
 </nav>
+
+<!--
+  
+<mat-toolbar>
+  <a class="navbar-brand" href="">
+    <img src="../../assets/img/Bookish-logo.png" alt="Bookish-logo" height="50" class="d-inline-block align-text-top" />
+  </a>
+  <div fxShow="true" fxHide.lt-sm="true" fLayoutAlign="center center">
+    <button mat-flat-button [routerLink]="'/home'" routerLinkActive="mat-accent">Home</button>
+    <button mat-flat-button [routerLink]="'/mostrar-catalogo'" routerLinkActive="mat-accent">Catálogo</button>
+    <button mat-flat-button [routerLink]="" routerLinkActive="mat-accent">Noticias</button>
+    <button mat-flat-button [routerLink]="" routerLinkActive="mat-accent">Contacto</button>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+    <button mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>build</mat-icon>
+    </button>
+    <button mat-flat-button [matMenuTriggerFor]="cuenta">Inicie Sesión</button>
+  </div>
+  <mat-menu #cuenta="matMenu">
+    <button mat-menu-item>Perfil</button>
+    <button mat-menu-item>Dashboard</button>
+    <button mat-menu-item>Mis compras</button>
+    <button mat-menu-item>Cerrar Sesión</button>
+  </mat-menu>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Home</button>
+      <button mat-menu-item>Catálogo</button>
+      <button mat-menu-item>Noticias</button>
+      <button mat-menu-item>Contacto</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+-->

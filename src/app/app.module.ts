@@ -1,3 +1,4 @@
+import { MostrarCatalogoComponent } from './catalogo/mostrar-catalogo/mostrar-catalogo.component';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRouterModule} from './app-router.module';
@@ -24,7 +25,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     HomeComponent,
     ListarUserComponent,
     AgregarUserComponent,
-    RegisterComponent
+    RegisterComponent,
+    MostrarCatalogoComponent,
   ],
   imports: [
     BrowserModule,

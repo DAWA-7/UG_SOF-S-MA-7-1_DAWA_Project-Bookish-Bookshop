@@ -44,3 +44,8 @@ nav ul li a svg {
   width: 104px;
   text-align: center;
 }
+
+/*mat-toolbar, button{
+  background-color: var(--pc-amparo-blue);
+  color:var(--tce-1)
+}*/
