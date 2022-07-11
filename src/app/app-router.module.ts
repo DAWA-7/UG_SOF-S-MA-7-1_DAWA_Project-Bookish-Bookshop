@@ -7,6 +7,7 @@ import {ListarCatalogoComponent} from './catalogo/listar-catalogo/listar-catalog
 import { MostrarCatalogoComponent } from './catalogo/mostrar-catalogo/mostrar-catalogo.component';
 import {ListarUserComponent} from './user/listar-user/listar-user.component';
 import {RegisterComponent} from "./auth/register/register.component";
+import { DetalleLibroComponent } from './catalogo/detalle-libro/detalle-libro.component';
 
 //route
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'listar-user', component: ListarUserComponent},
   {path: 'listar-catalogo', component: ListarCatalogoComponent},
   {path: 'mostrar-catalogo', component: MostrarCatalogoComponent},
+  {path: 'detalle-libro', component: DetalleLibroComponent},
 ]
 
 @NgModule({

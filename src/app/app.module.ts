@@ -15,6 +15,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {RegisterComponent} from './auth/register/register.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
+import {MatGridListModule} from '@angular/material/grid-list';
+import { DetalleLibroComponent } from './catalogo/detalle-libro/detalle-libro.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     AgregarUserComponent,
     RegisterComponent,
     MostrarCatalogoComponent,
+    DetalleLibroComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     AppRouterModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,MatGridListModule
   ],
   entryComponents: [LoginComponent, HeaderComponent],
   providers: [],

@@ -1,0 +1,41 @@
+.button {
+    background-color:var(--pc-hole-in-one);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: var(--fs-p);
+    margin: 4px 2px;
+    border-radius: 20px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    background-color: var(--sc-9);
+    border-radius: 10px;
+    text-align : center;
+}
+
+.row{
+    padding-top: 20px;
+    margin: 30px;
+}
+
+.container.color{
+    background-color: var(--sc-9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container.color.img{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.container.descrip{
+    margin-top: 60px;
+}

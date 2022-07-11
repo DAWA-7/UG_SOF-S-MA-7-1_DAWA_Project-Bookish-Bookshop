@@ -13,6 +13,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import {MatListModule} from '@angular/material/list';
     MatCardModule, MatToolbarModule, MatIconModule, MatDialogModule,
     MatButtonModule,MatTableModule,MatFormFieldModule,FormsModule,
     MatPaginatorModule,FlexLayoutModule,MatSidenavModule,MatListModule,
+    MatGridListModule,
   ],
   imports: [
     CommonModule
