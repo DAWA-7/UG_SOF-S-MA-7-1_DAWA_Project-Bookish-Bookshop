@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {MatDialogRef} from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import {WindowModelService} from '../../services/window-model.service';
+import {WindowModelService} from '../../../services/window-model.service';
 
 @Component({
   selector: 'app-login',

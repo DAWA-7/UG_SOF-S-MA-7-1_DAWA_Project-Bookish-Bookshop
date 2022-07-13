@@ -1,6 +1,6 @@
-import { UsusuarioService } from './../../services/ususuario.service';
-import { User } from './../../interfaces/user';
-import { AgregarUserComponent } from './../agregar-user/agregar-user.component';
+import { UsusuarioService } from '../../../services/ususuario.service';
+import { User } from '../../interfaces/user';
+import { AgregarUserComponent } from '../agregar-user/agregar-user.component';
 import { Component, OnInit } from '@angular/core';
 
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -20,7 +20,7 @@ export class ListarUserComponent implements OnInit {
   dataSource = new MatTableDataSource<any>;
   constructor(private usuerService: UsusuarioService, public dialog: MatDialog) {}
   openDialog() {
-  
+
     this.dialog.open(AgregarUserComponent);
   }
 
@@ -31,21 +31,21 @@ export class ListarUserComponent implements OnInit {
   ngOnInit(): void {
     this.listUsuario = this.usuerService.getUsuario();
     this.dataSource = new MatTableDataSource(this.listUsuario);
-    
+
   }
   //↑
-  
+
   // cargaUsuario(){
   //   this.listUsuario = this.usuerService.getUsuario();
   //   this.dataSource = new MatTableDataSource(this.listUsuario);
   // }
   editUsuario(element: any){
     this.dialog.open(AgregarUserComponent,{
-      data:element 
-      
+      data:element
+
     })
 
-     
+
   }
 
   //para filtrar por nombre

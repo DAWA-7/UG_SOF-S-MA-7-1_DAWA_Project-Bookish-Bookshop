@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import { WindowModelService } from '../services/window-model.service';
+import { WindowModelService } from '../../services/window-model.service';
 
 @Component({
   selector: 'app-header',
@@ -32,5 +32,5 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/home']);
     this.service.$modal.emit(false);
   }
-  
+
 }

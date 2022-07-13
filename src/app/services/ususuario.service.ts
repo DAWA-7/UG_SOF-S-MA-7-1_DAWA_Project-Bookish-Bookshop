@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { User } from '../interfaces/user';
+import { User } from '../client/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -7,17 +7,17 @@ import { User } from '../interfaces/user';
 export class UsusuarioService {
 
   ELEMENT_DATA: User[] = [
-    {cedula: 9123456789, nombres: 'Andres Davila', usuario: 'andresdav', correo: 'andres.davila@ug.edu.ec', contrasenia: '12345'}, 
-    {cedula: 9236548932, nombres: 'Helen bernal', usuario: 'helenber', correo: 'helen.bernal@ug.edu.ec', contrasenia: '12345'}, 
-    {cedula: 9654893217, nombres: 'Nefi Reyes', usuario: 'nefirey', correo:'nefi.reyes@ug.edu.ec', contrasenia: '12345'},  
-  ];  
+    {cedula: 9123456789, nombres: 'Andres Davila', usuario: 'andresdav', correo: 'andres.davila@ug.edu.ec', contrasenia: '12345'},
+    {cedula: 9236548932, nombres: 'Helen bernal', usuario: 'helenber', correo: 'helen.bernal@ug.edu.ec', contrasenia: '12345'},
+    {cedula: 9654893217, nombres: 'Nefi Reyes', usuario: 'nefirey', correo:'nefi.reyes@ug.edu.ec', contrasenia: '12345'},
+  ];
   constructor() { }
 
   getUsuario(){
     return this.ELEMENT_DATA.slice()
   }
   agregarUsuario(usuario: User){
-    this.ELEMENT_DATA.unshift(usuario) 
+    this.ELEMENT_DATA.unshift(usuario)
   }
 
   updateUser(data: User){
