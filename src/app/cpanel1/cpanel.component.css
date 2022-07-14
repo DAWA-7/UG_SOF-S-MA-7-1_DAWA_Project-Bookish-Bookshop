@@ -16,4 +16,17 @@
   z-index: 1;
 }
 
+@media screen and (min-width: 2000px) {
+  .sidenav {
+    width: 30%;
+  }
 
+  * {
+    font-size: 50px;
+  }
+
+  .items-list {
+    margin-top: 100px;
+    padding-block: 100px;
+  }
+}
