@@ -18,9 +18,11 @@
 
 @media screen and (min-width: 1200px) {
   .sidenav-container{
-    margin-right: 15%;
-    margin-left: 15%;
+    margin-right: 17%;
+    margin-left: 17%;
   }
 
-
+  .mat-nav-list :hover{
+    background-color: lightgray;
+  }
 }
