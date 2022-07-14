@@ -23,6 +23,7 @@ import {CrudlibrosComponent} from "./cpanel1/crudlibros/crudlibros.component";
 import {ClientComponent} from "./client/client.component";
 import {ListarCatalogoComponent} from "./client/catalogo/listar-catalogo/listar-catalogo.component";
 import {MatMenuModule} from "@angular/material/menu";
+import { LibroComponent } from './shared/libro/libro.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatMenuModule} from "@angular/material/menu";
     CPanelHomeComponent,
     CrudlibrosComponent,
     ClientComponent,
-    ListarCatalogoComponent
+    ListarCatalogoComponent,
+    LibroComponent
   ],
   imports: [
     BrowserModule,
