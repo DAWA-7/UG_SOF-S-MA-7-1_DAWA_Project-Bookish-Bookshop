@@ -1,0 +1,25 @@
+<div class="container-xl mt-5 mb-5">
+    <div class="row row-cols-6">
+        <!-- Card -->
+        <div class="col">
+            <div class="card" [routerLink]="'/detalle-libro'">
+                <img src="../../assets/img/books/{{titulo}}.webp" alt="img1" class="card-img-top" />
+                <div class="card-body">
+                    <p class="book-name">{{titulo}}</p>
+                    <p class="book-autor">{{autor}}</p>
+                </div>
+                <div class="card-footer btn">
+                    <div class="row">
+                        <div class="col-sm"></div>
+                        <div class="col-sm" style="font-size: 20px; font-weight: bold; text-align: center">
+                            ${{precio.toFixed(2)}}
+                        </div>
+                        <div class="col-sm cart-comprar">
+                            <i class="bi bi-cart-fill" style="font-size: 1.5rem"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
