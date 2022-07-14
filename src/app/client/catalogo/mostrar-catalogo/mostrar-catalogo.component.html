@@ -42,11 +42,15 @@
             </button>-->
         </mat-sidenav>
         <mat-sidenav-content class="content">
-            <app-libro [titulo]="libro.titulo" [autor]="libro.autor" [precio]="libro.precio"
-                *ngFor="let libro of libros">
-                {{libro}}</app-libro>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                    <app-libro class="col" [titulo]="libro.titulo" [autor]="libro.autor" [precio]="libro.precio"
+                        *ngFor="let libro of libros">
+                        {{libro}}</app-libro>
+                </div>
+            </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
-    <mat-paginator [length]="10" [pageSize]="18" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    <mat-paginator [length]="12" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
     </mat-paginator>
 </div>
