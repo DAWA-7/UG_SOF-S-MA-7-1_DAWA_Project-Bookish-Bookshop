@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-crudlibros',
+  selector: 'app-cpanel-crudlibros',
   templateUrl: './crudlibros.component.html',
   styleUrls: ['./crudlibros.component.css']
 })

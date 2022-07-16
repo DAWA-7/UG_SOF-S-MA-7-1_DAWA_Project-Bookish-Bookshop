@@ -1,9 +1,9 @@
-import { UsusuarioService } from '../../../services/ususuario.service';
-import { User } from '../../interfaces/user';
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {UsusuarioService} from '../../../services/ususuario.service';
+import {User} from '../../../client/interfaces/user';
+import {Component, Inject, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-agregar-user',
@@ -12,17 +12,17 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class AgregarUserComponent implements OnInit {
 
-  actionBtn:string = "Guardar"
-  userForm! : FormGroup
+  actionBtn: string = "Guardar"
+  userForm!: FormGroup
+
   constructor(private formBuilder: FormBuilder, private _serviceUsuer: UsusuarioService,
-     private router: Router, @Inject(MAT_DIALOG_DATA) public editarDatos: any, private dialogRef: MatDialogRef<AgregarUserComponent>) {
+              private router: Router, @Inject(MAT_DIALOG_DATA) public editarDatos: any, private dialogRef: MatDialogRef<AgregarUserComponent>) {
 
 
-   }
+  }
 
 
   //  @Inject(MAT_DIALOG_DATA) public editarDatos: any ,
-
 
 
   ngOnInit(): void {
@@ -36,24 +36,25 @@ export class AgregarUserComponent implements OnInit {
     })
 
 
-    if(this.editarDatos){
+    if (this.editarDatos) {
       this.actionBtn = "Actualizar"
       this.userForm.controls['cedula'].setValue(this.editarDatos.cedula),
-      this.userForm.controls['nombres'].setValue(this.editarDatos.nombres),
-      this.userForm.controls['usuario'].setValue(this.editarDatos.usuario),
-      this.userForm.controls['correo'].setValue(this.editarDatos.correo),
-      this.userForm.controls['contrasenia'].setValue(this.editarDatos.contrasenia)
+        this.userForm.controls['nombres'].setValue(this.editarDatos.nombres),
+        this.userForm.controls['usuario'].setValue(this.editarDatos.usuario),
+        this.userForm.controls['correo'].setValue(this.editarDatos.correo),
+        this.userForm.controls['contrasenia'].setValue(this.editarDatos.contrasenia)
     }
 
 
   }
 
-  closeDialog(){
+  closeDialog() {
     this.dialogRef.close()
   }
 
-  agregarUsuario(){
-    if(!this.editarDatos){
+  agregarUsuario() {
+    if (!this.editarDatos && this.actionBtn === "Guardar") {
+      console.log("a")
       const user: User = {
         cedula: this.userForm.value.cedula,
         nombres: this.userForm.value.nombres,
@@ -62,10 +63,11 @@ export class AgregarUserComponent implements OnInit {
         contrasenia: this.userForm.value.contrasenia
 
       }
-      this.router.navigate(['/listar-catalogo'])
-      .then(()=>this.router.navigate(['/listar-user'],{state:{editarDatos: this._serviceUsuer.agregarUsuario(user)}}))
-
-    }else{
+      this.router.navigate(['/cpanel']).then(() =>
+        this.router.navigate(['/cpanel/users'],
+          {state: {editarDatos: this._serviceUsuer.agregarUsuario(user)}}))
+    } else if (this.actionBtn === "Actualizar") {
+      console.log("b")
       const user: User = {
         cedula: this.userForm.value.cedula,
         nombres: this.userForm.value.nombres,
@@ -73,9 +75,10 @@ export class AgregarUserComponent implements OnInit {
         correo: this.userForm.value.correo,
         contrasenia: this.userForm.value.contrasenia
       }
-      this.router.navigate(['/listar-catalogo'])
-      .then(()=>this.router.navigate(['/listar-user'],{state:{editarDatos: this._serviceUsuer.updateUser(user)}}))
+      this.router.navigate(['/cpanel'])
+        .then(() => this.router.navigate(['/cpanel/users'], {state: {editarDatos: this._serviceUsuer.updateUser(user)}}))
     }
+    this.dialogRef.close()
 
     // window.location.reload()
     // this._serviceUsuer.agregarUsuario(user)

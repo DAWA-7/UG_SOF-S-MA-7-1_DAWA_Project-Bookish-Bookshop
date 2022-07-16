@@ -1,11 +1,11 @@
-import { UsusuarioService } from '../../../services/ususuario.service';
-import { User } from '../../interfaces/user';
-import { AgregarUserComponent } from '../agregar-user/agregar-user.component';
-import { Component, OnInit } from '@angular/core';
+import {UsusuarioService} from '../../../services/ususuario.service';
+import {User} from '../../../client/interfaces/user';
+import {AgregarUserComponent} from '../agregar-user/agregar-user.component';
+import {Component, OnInit} from '@angular/core';
 
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import {MatTableDataSource} from '@angular/material/table';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-listar-user',
@@ -15,16 +15,19 @@ import { Router } from '@angular/router';
 export class ListarUserComponent implements OnInit {
 
   listUsuario: User[] = []
-  displayedColumns: string[] = ['cedula', 'nombres', 'usuario', 'correo', 'contrasenia', 'modificar'];
+  displayedColumns: string[] = ['nombres', 'cedula', 'usuario', 'correo', 'modificar'];
   //para llamar al matdialog
   dataSource = new MatTableDataSource<any>;
-  constructor(private usuerService: UsusuarioService, public dialog: MatDialog) {}
+
+  constructor(private usuerService: UsusuarioService, public dialog: MatDialog) {
+  }
+
   openDialog() {
 
     this.dialog.open(AgregarUserComponent);
   }
 
-  closeDialog(){
+  closeDialog() {
     this.dialog.closeAll()
   }
 
@@ -33,15 +36,16 @@ export class ListarUserComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.listUsuario);
 
   }
+
   //↑
 
   // cargaUsuario(){
   //   this.listUsuario = this.usuerService.getUsuario();
   //   this.dataSource = new MatTableDataSource(this.listUsuario);
   // }
-  editUsuario(element: any){
-    this.dialog.open(AgregarUserComponent,{
-      data:element
+  editUsuario(element: any) {
+    this.dialog.open(AgregarUserComponent, {
+      data: element
 
     })
 
