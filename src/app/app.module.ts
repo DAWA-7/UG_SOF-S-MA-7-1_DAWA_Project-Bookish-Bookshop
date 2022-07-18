@@ -26,6 +26,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LibroComponent } from './shared/libro/libro.component';
 import { MatSortModule } from '@angular/material/sort';
 import { NoticiasModule } from './modules/noticias/noticias.module';
+import { ButtonPrimaryComponent } from './shared/components/buttons/button-primary/button-primary.component';
+import { ButtonSecondaryComponent } from './shared/components/buttons/button-secondary/button-secondary.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { NoticiasModule } from './modules/noticias/noticias.module';
     ClientComponent,
     ListarCatalogoComponent,
     LibroComponent,
+    ButtonPrimaryComponent,
+    ButtonSecondaryComponent,
   ],
   imports: [
     BrowserModule,

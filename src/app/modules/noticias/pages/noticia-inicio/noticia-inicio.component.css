@@ -22,8 +22,8 @@ section[id^="Section"] {
 
 #Section-1 {
   background-color: var(--pc-amparo-blue);
-  /* max-height: 675px; */
-  /* height: 670px; */
+  /* height: 675px; */
+  /* max-height: 670px; */
 }
 #Section-1 #left {
   background-color: yellow;
@@ -38,24 +38,22 @@ section[id^="Section"] {
 #Section-1 #left #img-1 {
   background-color: aqua;
   /* width: 683px; */
-  /* height: 330px; */
+  /* max-height: 330px; */
 }
 
 #Section-1 #left #img-2 {
-  background-color: purple;
-  /* height: 330px; */
+  /* background-color: purple; */
+  /* max-height: 330px; */
 }
 
 #Section-1 #left #img-3 {
   background-color: green;
-  /* height: 330px; */
+  /* max-height: 330px; */
+}
+
+#right img {
+  height: 100%;
+  object-fit: cover;
 }
 
 /* #endregion */
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}

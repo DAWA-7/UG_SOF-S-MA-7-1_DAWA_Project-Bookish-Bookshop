@@ -10,6 +10,16 @@ import { WindowModelService } from '../../services/window-model.service';
 })
 export class HeaderComponent implements OnInit {
   // Variable declarations
+  listNavItem: { name: string; address: string }[] = [
+    { name: 'Inicio', address: '/home' },
+    { name: 'Catalogo', address: '/mostrar-catalogo' },
+    { name: 'Noticias', address: '/noticias' },
+    { name: 'Sugerencias', address: '#' },
+  ];
+  listOptions: string[] = ['Perfil', 'Configuración'];
+  userName: String = '';
+  isUserRole: boolean = false;
+  /*  ----------------- */
   isActiveInicio = true;
   isActiveCatalogo = false;
   isActiveNoticias = false;
@@ -19,12 +29,18 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private service: WindowModelService,
-    private dialog: MatDialog,
+    // private dialog: MatDialog,
     private router: Router
   ) {
-    this.isLogged = false;
+    // this.isLogged = false;
+    // this.service.$modal.subscribe((valor) => {
+    //   this.isLogged = valor;
+    //   console.log('valor: ' + valor);
+    // });
+
+    this.isUserRole = false;
     this.service.$modal.subscribe((valor) => {
-      this.isLogged = valor;
+      this.isUserRole = valor;
       console.log('valor: ' + valor);
     });
   }
@@ -32,36 +48,57 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   //#region Functions
-  sendLogin(): void {
+  openSignUp(): void {
+    this.router.navigate(['/register']);
+    // this.dialog.open(SignupComponent, { data: { signupName: titleForm } }); //[signupName]="Random name"
+  }
+
+  openLogIn() {
     if (this.router != null) {
       this.router.navigate(['login']);
     }
   }
 
-  cerrarSesion() {
+  openLogOut() {
     this.router.navigate(['/home']);
     this.service.$modal.emit(false);
   }
 
-  navigateTo(module: string) {
-    this.isActiveInicio = false;
-    this.isActiveCatalogo = false;
-    this.isActiveNoticias = false;
-    this.isActiveSugerencias = false;
-    switch (module) {
-      case 'Inicio':
-        this.router.navigate(['/home']);
-        this.isActiveInicio = true;
-        break;
-      case 'Catálogo':
-        this.router.navigate(['//mostrar-catalogo']);
-        this.isActiveCatalogo = true;
-        break;
-      case 'Noticias':
-        this.router.navigate(['/noticias']);
-        this.isActiveNoticias = true;
-        break;
-    }
+  openEditUser() {
+    this.router.navigate(['/cpanel/users']);
   }
+  // ! Mantener constante al usuario logeado hasta que salga
+
+  // navigateTo(module: string) {
+  //   this.isActiveInicio = false;
+  //   this.isActiveCatalogo = false;
+  //   this.isActiveNoticias = false;
+  //   this.isActiveSugerencias = false;
+  //   switch (module) {
+  //     case 'Inicio':
+  //       this.router.navigate(['/home']);
+  //       this.isActiveInicio = true;
+  //       break;
+  //     case 'Catálogo':
+  //       this.router.navigate(['//mostrar-catalogo']);
+  //       this.isActiveCatalogo = true;
+  //       break;
+  //     case 'Noticias':
+  //       this.router.navigate(['/noticias']);
+  //       this.isActiveNoticias = true;
+  //       break;
+  //   }
+  // }
+
+  // cerrarSesion() {
+  //   this.router.navigate(['/home']);
+  //   this.service.$modal.emit(false);
+  // }
+
+  // sendLogin(): void {
+  //   if (this.router != null) {
+  //     this.router.navigate(['login']);
+  //   }
+  // }
   //#endregion
 }

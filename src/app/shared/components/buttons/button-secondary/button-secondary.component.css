@@ -1,0 +1,22 @@
+.btn-outline-light {
+  --bs-btn-hover-color: var(--pc-amparo-blue);
+  --bs-btn-focus-shadow-rgb: none;
+}
+
+button {
+  background-color: var(--pc-amparo-blue);
+  color: var(--tce-1);
+  /* border: 2px solid var(--tce-1); */
+  /* outline: 2px solid var(--tce-1); */
+  border-color: var(--tce-1) !important;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--tce-1);
+  color: var(--pc-amparo-blue);
+}

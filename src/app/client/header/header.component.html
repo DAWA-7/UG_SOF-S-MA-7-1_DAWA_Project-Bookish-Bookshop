@@ -1,4 +1,44 @@
-<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+<!-- one header for all (depending on rol, hide sections or tags) -->
+<header>
+  <nav class="navbar navbar-expand-lg container-xl">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bookish Bookshop</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" *ngFor="let item of listNavItem">
+            <a class="nav-link" href="{{item.address}}"> {{item.name}} </a>
+          </li>
+        </ul>
+
+        <form *ngIf="!isUserRole">
+          <app-button-secondary [buttonName]="'Registrarse'" (click)="openSignUp()" class="mx-2"></app-button-secondary>
+          <app-button-primary [buttonName]="'Iniciar sesión'" (click)="openLogIn()"></app-button-primary>
+        </form>
+
+        <form *ngIf="isUserRole">
+          <i class="bi bi-caret-down-fill" style="color: white;"></i>
+          <app-button-primary [buttonName]="userName+'¿Nombre?'" mat-button [matMenuTriggerFor]="beforeMenu"></app-button-primary>
+          <!-- <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button> -->
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item *ngFor="let item of listOptions"> {{item}} </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="openEditUser()"> Editar Usuarios </button>
+            <button mat-menu-item (click)="openLogOut()"> Salir </button>
+          </mat-menu>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<!-- 
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="">
       <img src="../../../assets/img/Bookish-logo.png" alt="Bookish-logo" height="50" class="d-inline-block align-text-top" />
@@ -11,22 +51,18 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
 
-        <!-- navigate to Home -->
         <li class="nav-item mx-0 mx-lg-1" [ngClass]="isActiveInicio ? 'active' : ''">
           <a class="nav-link py-3 px-0 px-lg-3 rounded content" (click)="navigateTo('Inicio')">Inicio</a>
         </li>
 
-        <!-- navigate to Catálogo -->
         <li class="nav-item mx-0 mx-lg-1" [ngClass]="isActiveCatalogo ? 'active' : ''">
           <a class="nav-link py-3 px-0 px-lg-3 rounded content" (click)="navigateTo('Catálogo')">Catálogo</a>
         </li>
 
-        <!-- navigate to Noticias -->
         <li class="nav-item mx-0 mx-lg-1" [ngClass]="isActiveNoticias ? 'active' : ''">
           <a class="nav-link py-3 px-0 px-lg-3 rounded content" (click)="navigateTo('Noticias')">Noticias</a>
         </li>
 
-        <!-- navigate to Sugerencias -->
         <li class="nav-item mx-0 mx-lg-1" [ngClass]="isActiveSugerencias ? 'active' : ''">
           <a class="nav-link py-3 px-0 px-lg-3 rounded content">Sugerencias</a>
         </li>
@@ -55,7 +91,8 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> 
+-->
 
 <!--
 

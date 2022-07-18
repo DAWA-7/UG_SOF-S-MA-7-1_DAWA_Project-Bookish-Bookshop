@@ -1,0 +1,13 @@
+button {
+  color: var(--tce-1);
+  background-color: var(--pc-hole-in-one);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--pc-goldenrod-field);
+}

@@ -1,17 +1,45 @@
-* {
-  font-family: var(--ff-fredoka);
+header {
+  background-color: var(--pc-amparo-blue);
+  /* height: 64px; */
 }
 
 nav {
   background-color: var(--pc-amparo-blue);
-  height: 68px;
 }
 
 img {
-  height: 64px;
+  height: 30px;
 }
 
-.nav-link {
+a,
+li {
+  color: var(--tce-1);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--pc-hole-in-one);
+  --bs-btn-hover-bg: var(--pc-goldenrod-field);
+}
+
+.btn-outline-light {
+  --bs-btn-hover-color: var(--pc-amparo-blue);
+}
+
+/*---------------------------------------------------------------- */
+* {
+  /* font-family: var(--ff-fredoka); */
+}
+
+/* nav {
+  background-color: var(--pc-amparo-blue);
+  height: 68px;
+} */
+
+/* img {
+  height: 64px;
+} */
+
+/* .nav-link {
   color: var(--tce-1) !important;
   font-size: 16px;
   transition: all 0.5s ease 0s;
@@ -19,9 +47,11 @@ img {
   -moz-transition: all 0.5s ease 0s;
   -ms-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
-}
-.nav-link:hover {
-  background-color: var(--pc-hole-in-one); /*#945aaf*/
+} */
+
+/*#945aaf*/
+/* .nav-link:hover {
+  background-color: var(--pc-hole-in-one); 
   color: var(--tce-1) !important;
   border-radius: 10px;
   transition: all 0.5s ease 0s;
@@ -29,21 +59,22 @@ img {
   -moz-transition: all 0.5s ease 0s;
   -ms-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
-}
+} */
 
-nav ul li a svg {
+/* nav ul li a svg {
   fill: var(--tce-1);
-}
+} */
 
-.active {
-  background-color: var(--pc-hole-in-one); /*#945aaf*/
+/*#945aaf*/
+/* .active {
+  background-color: var(--pc-hole-in-one); 
   border-radius: 10px;
-}
+} */
 
-.content {
+/* .content {
   width: 104px;
   text-align: center;
-}
+} */
 
 /*mat-toolbar, button{
   background-color: var(--pc-amparo-blue);
