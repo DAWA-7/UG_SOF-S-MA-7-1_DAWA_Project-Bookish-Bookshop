@@ -2,18 +2,24 @@
 <header>
   <nav class="navbar navbar-expand-lg container-xl">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Bookish Bookshop</a>
 
+      <a class="navbar-brand" [routerLink]="listNavItem[0].address">Bookish Bookshop</a>
+
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <mat-icon class="icon-display">menu</mat-icon>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item" *ngFor="let item of listNavItem">
-            <a class="nav-link" href="{{item.address}}"> {{item.name}} </a>
+          <li [routerLinkActive]="'active'" class="nav-item" *ngFor="let item of listNavItem">
+            <a class="nav-link" [routerLink]="item.address"> {{item.name}} </a>
           </li>
         </ul>
+
+        <a href="#">
+          <mat-icon style="color: white;">shopping_cart</mat-icon>
+        </a>
 
         <form *ngIf="!isUserRole">
           <app-button-secondary [buttonName]="'Registrarse'" (click)="openSignUp()" class="mx-2"></app-button-secondary>
@@ -25,9 +31,9 @@
           <app-button-primary [buttonName]="userName+'¿Nombre?'" mat-button [matMenuTriggerFor]="beforeMenu"></app-button-primary>
           <!-- <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button> -->
           <mat-menu #beforeMenu="matMenu" xPosition="before">
-            <button mat-menu-item *ngFor="let item of listOptions"> {{item}} </button>
+            <!-- <button mat-menu-item *ngFor="let item of listOptions"> {{item}} </button> -->
+            <button mat-menu-item (click)="openCPanel()"> Configuración </button>
             <mat-divider></mat-divider>
-            <button mat-menu-item (click)="openEditUser()"> Editar Usuarios </button>
             <button mat-menu-item (click)="openLogOut()"> Salir </button>
           </mat-menu>
         </form>
