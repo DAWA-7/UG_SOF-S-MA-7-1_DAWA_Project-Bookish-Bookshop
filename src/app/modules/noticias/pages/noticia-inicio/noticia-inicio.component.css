@@ -56,4 +56,8 @@ section[id^="Section"] {
   object-fit: cover;
 }
 
+.container-img {
+  height: 330px;
+}
+
 /* #endregion */

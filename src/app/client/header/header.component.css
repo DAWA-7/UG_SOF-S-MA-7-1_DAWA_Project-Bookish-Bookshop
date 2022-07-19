@@ -52,9 +52,9 @@ li :hover {
 }
 
 /*---------------------------------------------------------------- */
-* {
-  /* font-family: var(--ff-fredoka); */
-}
+/* * { */
+/* font-family: var(--ff-fredoka); */
+/* } */
 
 /* nav {
   background-color: var(--pc-amparo-blue);

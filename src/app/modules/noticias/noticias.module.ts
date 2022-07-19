@@ -8,6 +8,7 @@ import { NoticiaArticuloComponent } from './pages/noticia-articulo/noticia-artic
 import { NoticiaCard1Component } from './components/noticia-card1/noticia-card1.component';
 import { NoticiaCard2Component } from './components/noticia-card2/noticia-card2.component';
 import { MaterialNoticiasModule } from './material-noticias/material-noticias.module';
+import { NoticiaArticulo1Component } from './components/noticia-articulo1/noticia-articulo1.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MaterialNoticiasModule } from './material-noticias/material-noticias.mo
     NoticiaArticuloComponent,
     NoticiaCard1Component,
     NoticiaCard2Component,
+    NoticiaArticulo1Component,
   ],
   imports: [CommonModule, NoticiasRoutingModule, MaterialNoticiasModule],
 })
