@@ -20,12 +20,12 @@ export class HeaderComponent implements OnInit {
   userName: String = '';
   isUserRole: boolean = false;
   /*  ----------------- */
-  isActiveInicio = true;
-  isActiveCatalogo = false;
-  isActiveNoticias = false;
-  isActiveSugerencias = false;
+  // isActiveInicio = true;
+  // isActiveCatalogo = false;
+  // isActiveNoticias = false;
+  // isActiveSugerencias = false;
   // listSections = ['Inicio', 'Catálogo', 'Noticias', 'Sugerencias'];
-  isLogged!: boolean;
+  // isLogged!: boolean;
 
   constructor(
     private service: WindowModelService,
@@ -64,8 +64,8 @@ export class HeaderComponent implements OnInit {
     this.service.$modal.emit(false);
   }
 
-  openEditUser() {
-    this.router.navigate(['/cpanel/users']);
+  openCPanel() {
+    this.router.navigate(['/cpanel']);
   }
   // ! Mantener constante al usuario logeado hasta que salga
 
