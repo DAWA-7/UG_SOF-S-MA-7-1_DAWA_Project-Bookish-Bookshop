@@ -19,15 +19,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { DetalleLibroComponent } from './client/catalogo/detalle-libro/detalle-libro.component';
 import { CPanelComponent } from './cpanel1/cpanel.component';
 import { CPanelHomeComponent } from './cpanel1/cpanel-home/cpanel-home.component';
-import { CrudlibrosComponent } from './cpanel1/cpanel-crudlibros/crudlibros.component';
 import { ClientComponent } from './client/client.component';
-import { ListarCatalogoComponent } from './client/catalogo/listar-catalogo/listar-catalogo.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { LibroComponent } from './shared/libro/libro.component';
 import { MatSortModule } from '@angular/material/sort';
 import { NoticiasModule } from './modules/noticias/noticias.module';
 import { ButtonPrimaryComponent } from './shared/components/buttons/button-primary/button-primary.component';
 import { ButtonSecondaryComponent } from './shared/components/buttons/button-secondary/button-secondary.component';
+import { AgregarLibroComponent } from './cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
+import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar-libro.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +43,9 @@ import { ButtonSecondaryComponent } from './shared/components/buttons/button-sec
     DetalleLibroComponent,
     CPanelComponent,
     CPanelHomeComponent,
-    CrudlibrosComponent,
+    ListarLibroComponent,
+    AgregarLibroComponent,
     ClientComponent,
-    ListarCatalogoComponent,
     LibroComponent,
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,

@@ -7,45 +7,15 @@
 
     <mat-sidenav-container class="catalogo-container">
         <mat-sidenav class="sidenav" mode="side" opened>
-            <mat-action-list>
-                <button mat-list-item> Aventura </button>
-                <button mat-list-item> Ciencia Ficción </button>
-                <button mat-list-item> Histórica </button>
-                <button mat-list-item> Juvenil </button>
-                <button mat-list-item> Niños </button>
-                <button mat-list-item> Romance </button>
-                <button mat-list-item> Terror </button>
+            <mat-action-list *ngFor="let item of listItem">
+                <button mat-list-item href=""> {{item.name}} </button>
             </mat-action-list>
-            <!--<button mat-button>
-                <mat-icon>access_time</mat-icon> Añadido Recientemente
-            </button>
-            <button mat-button>
-                <i class="bi bi-magic">Ciencia Ficción</i>
-            </button>
-            <button mat-button>
-                <i class="bi bi-book-half">Romance</i>
-            </button>
-            <button mat-button>
-                <i class="bi bi-eyeglasses">Juvenil</i>
-            </button>
-            <button mat-button>
-                <i class="bi bi-book-half">Histórica</i>
-            </button>
-            <button mat-button>
-                <i class="bi bi-book-half">Terror</i>
-            </button>
-            <button mat-button>
-                <i class="bi bi-book-half">Aventura</i>
-            </button>
-            <button mat-button>
-                <i class="bi bi-moon-fill">Niños</i>
-            </button>-->
         </mat-sidenav>
         <mat-sidenav-content class="content">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-                    <app-libro class="col" [titulo]="libro.titulo" [autor]="libro.autor" [precio]="libro.precio"
-                        *ngFor="let libro of libros">
+                    <app-libro class="col" [imagen]="libro.imagen" [titulo]="libro.titulo" [autor]="libro.autor"
+                        [precio]="libro.precio" *ngFor="let libro of libros">
                         {{libro}}</app-libro>
                 </div>
             </div>

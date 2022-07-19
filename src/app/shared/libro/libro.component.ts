@@ -17,10 +17,10 @@ export class LibroComponent implements OnInit {
   @Input() descripcion = "";
   @Input() titulo = "";
   @Input() precio = 10.00;
+  @Input() imagen = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
