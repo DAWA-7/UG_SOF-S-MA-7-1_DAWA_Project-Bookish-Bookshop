@@ -1,21 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Book } from '../../interfaces/book';
+import { Injectable } from '@angular/core';
+import { Book } from '../client/interfaces/book';
 
-@Component({
-  selector: 'app-mostrar-catalogo',
-  templateUrl: './mostrar-catalogo.component.html',
-  styleUrls: ['./mostrar-catalogo.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class MostrarCatalogoComponent implements OnInit {
-
-  listItem: { name: string; address: string }[] = [
-    { name: 'Ciencia Ficción', address: '#' },
-    { name: 'Clásicos', address: '#' },
-    { name: 'Histórica', address: '#' },
-    { name: 'Juvenil', address: '#' },
-    { name: 'Romance', address: '#' },
-    { name: 'Terror', address: '#' },
-  ];
+export class CatalogoService {
 
   libros: Book[] = [
     {id_libro: 1, autor: "Federico Moccia", editorial: "Planeta", id_categoria: 0/*Juvenil*/, fecha_publicacion: new Date(16/6/2020),
@@ -44,12 +33,18 @@ export class MostrarCatalogoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  getLibro(){
+    return this.libros.slice()
+  }
+  agregarLibro(usuario: Book){
+    this.libros.unshift(usuario)
   }
 
-  //para filtrar por nombre
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    //this.dataSource.filter = filterValue.trim().toLowerCase();
+  updateLibro(data: Book){
+    var id = this.libros.find(libro => libro.id_libro == data.id_libro)
+    if(data.id_libro == id?.id_libro){
+      var index  = this.libros.findIndex(libro => libro.id_libro == data.id_libro)
+      this.libros[index] = data
+    }
   }
 }

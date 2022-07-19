@@ -9,5 +9,6 @@ export interface Book{
     descripcion: string;
     titulo: string;
     precio: number;
+    imagen: string;
 }
   
