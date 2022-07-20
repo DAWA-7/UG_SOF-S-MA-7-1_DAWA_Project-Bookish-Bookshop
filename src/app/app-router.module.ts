@@ -12,6 +12,7 @@ import { DetalleLibroComponent } from './client/catalogo/detalle-libro/detalle-l
 import { CPanelComponent } from './cpanel1/cpanel.component';
 import { CPanelHomeComponent } from './cpanel1/cpanel-home/cpanel-home.component';
 import { ClientComponent } from './client/client.component';
+import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
 
 //route
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'catalogo', component: MostrarCatalogoComponent },
       { path: 'detalle-libro', component: DetalleLibroComponent },
+      {path: 'carrito-compras', component: CarritoCompraComponent}
     ],
   },
   {

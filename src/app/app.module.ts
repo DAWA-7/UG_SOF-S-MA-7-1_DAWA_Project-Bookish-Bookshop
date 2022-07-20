@@ -28,7 +28,8 @@ import { ButtonPrimaryComponent } from './shared/components/buttons/button-prima
 import { ButtonSecondaryComponent } from './shared/components/buttons/button-secondary/button-secondary.component';
 import { AgregarLibroComponent } from './cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
 import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar-libro.component';
-
+import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
+import { CarritoSectionComponent } from './carrito-compra/carrito-section/carrito-section.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,8 @@ import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar
     LibroComponent,
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,
+    CarritoCompraComponent,
+    CarritoSectionComponent
   ],
   imports: [
     BrowserModule,

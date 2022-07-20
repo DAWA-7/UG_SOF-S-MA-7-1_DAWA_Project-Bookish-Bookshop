@@ -1,0 +1,11 @@
+li{
+    display:inline;
+    font-size: 20px;
+}
+.carritoSection{
+    visibility: visible;
+}
+
+.facturaSection{
+    visibility: hidden;
+}
