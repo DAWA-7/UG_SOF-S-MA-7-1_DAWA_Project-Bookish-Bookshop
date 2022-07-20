@@ -1,22 +1,27 @@
 <div class="container">
     <mat-form-field>
         <mat-label>Filtro</mat-label>
-        <input matInput appearance="outline" (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        <input matInput appearance="outline" (keyup)="applyFilter($event)" placeholder="Buscar" #input>
         <mat-icon matPrefix>search</mat-icon>
     </mat-form-field>
 
     <mat-sidenav-container class="catalogo-container">
         <mat-sidenav class="sidenav" mode="side" opened>
-            <mat-action-list *ngFor="let item of listItem">
-                <button mat-list-item href=""> {{item.name}} </button>
+            <mat-action-list>
+                <button mat-list-item (click)="categoria = 0"> Recientes
+                </button>
+                <button mat-list-item *ngFor="let item of listCategoria" (click)="categoria = item.id_categoria">
+                    {{item.nombre_categoria}}
+                </button>
             </mat-action-list>
         </mat-sidenav>
         <mat-sidenav-content class="content">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     <app-libro class="col" [imagen]="libro.imagen" [titulo]="libro.titulo" [autor]="libro.autor"
-                        [precio]="libro.precio" *ngFor="let libro of libros">
-                        {{libro}}</app-libro>
+                        [precio]="libro.precio" *ngFor="let libro of filtrarCategoria(listLibros, listCategoria)">
+                        {{libro}}
+                    </app-libro>
                 </div>
             </div>
         </mat-sidenav-content>

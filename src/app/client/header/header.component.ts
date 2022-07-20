@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   // Variable declarations
   listNavItem: { name: string; address: string }[] = [
     { name: 'Inicio', address: '/home' },
-    { name: 'Catalogo', address: '/mostrar-catalogo' },
+    { name: 'Catalogo', address: '/catalogo' },
     { name: 'Noticias', address: '/noticias' },
     { name: 'Sugerencias', address: '#' },
   ];
