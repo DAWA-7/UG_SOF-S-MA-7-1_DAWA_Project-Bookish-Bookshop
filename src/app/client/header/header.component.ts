@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { WindowModelService } from '../../services/window-model.service';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {Router} from '@angular/router';
+import {WindowModelService} from '../../services/window-model.service';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +11,13 @@ import { WindowModelService } from '../../services/window-model.service';
 export class HeaderComponent implements OnInit {
   // Variable declarations
   listNavItem: { name: string; address: string }[] = [
-    { name: 'Inicio', address: '/home' },
-    { name: 'Catalogo', address: '/mostrar-catalogo' },
-    { name: 'Noticias', address: '/noticias' },
-    { name: 'Sugerencias', address: '#' },
+    {name: 'Inicio', address: '/home'},
+    {name: 'Catalogo', address: '/mostrar-catalogo'},
+    {name: 'Noticias', address: '/noticias'},
+    {name: 'Sugerencias', address: '#'},
   ];
   listOptions: string[] = ['Perfil', 'Configuración'];
   userName: String = '';
-  isUserRole: boolean = false;
   /*  ----------------- */
   // isActiveInicio = true;
   // isActiveCatalogo = false;
@@ -32,20 +31,14 @@ export class HeaderComponent implements OnInit {
     // private dialog: MatDialog,
     private router: Router
   ) {
-    // this.isLogged = false;
-    // this.service.$modal.subscribe((valor) => {
-    //   this.isLogged = valor;
-    //   console.log('valor: ' + valor);
-    // });
-
-    this.isUserRole = false;
     this.service.$modal.subscribe((valor) => {
-      this.isUserRole = valor;
+      this.userName = valor
       console.log('valor: ' + valor);
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   //#region Functions
   openSignUp(): void {
@@ -67,6 +60,7 @@ export class HeaderComponent implements OnInit {
   openCPanel() {
     this.router.navigate(['/cpanel']);
   }
+
   // ! Mantener constante al usuario logeado hasta que salga
 
   // navigateTo(module: string) {
