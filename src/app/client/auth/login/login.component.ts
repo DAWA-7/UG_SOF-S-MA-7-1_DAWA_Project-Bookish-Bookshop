@@ -3,6 +3,7 @@ import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {MatDialogRef} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 import {WindowModelService} from '../../../services/window-model.service';
+import {UsuarioService} from "../../../services/usuario.service";
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,9 @@ import {WindowModelService} from '../../../services/window-model.service';
 export class LoginComponent {
 
   public frmLogin: FormGroup;
+  public error: boolean = false;
 
-  constructor(private service: WindowModelService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private service: WindowModelService, private router: Router,private _dataUser: UsuarioService, private formBuilder: FormBuilder) {
     this.frmLogin = this.formBuilder.group({
       usuario: ['', Validators.required],
       password: ['', Validators.required]
@@ -26,15 +28,16 @@ export class LoginComponent {
 
   }
 
-  onSubmit(usuario: String, password: String) {
-    if (usuario == "usuario" && password == "usuario") {
+  onSubmit(usuario: string, password: String) {
+    var user = this._dataUser.getUserByCedula(usuario);
+    if (user != null && user.contrasenia == password) {
       this.router.navigate(['/home']);
-      this.service.$modal.emit(true);
+      this.service.$modal.emit(user.usuario);
     } else {
-
-      alert("Error en las credenciales")
-      window.location.reload();
-
+      this.error = true;
+      setTimeout( () =>{
+        this.error = false;
+      },5000);
     }
   }
 

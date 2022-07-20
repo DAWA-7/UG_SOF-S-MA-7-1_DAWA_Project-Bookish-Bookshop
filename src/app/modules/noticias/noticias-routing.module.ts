@@ -9,14 +9,8 @@ const routes: Routes = [
     path: 'noticias',
     component: NoticiasComponent,
     children: [
-      {
-        path: '',
-        component: NoticiaInicioComponent,
-      },
-      {
-        path: 'inicio',
-        component: NoticiaInicioComponent,
-      },
+      { path: '', component: NoticiaInicioComponent },
+      { path: 'inicio', component: NoticiaInicioComponent },
       { path: 'articulo', component: NoticiaArticuloComponent },
     ],
   },

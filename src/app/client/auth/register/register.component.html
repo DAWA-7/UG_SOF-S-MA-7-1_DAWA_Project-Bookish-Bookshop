@@ -5,7 +5,7 @@
     </mat-card-subtitle>
     <!--Formulario-->
     <div class="row justify-content-md-center">
-      <form [formGroup]="frmLogin" (ngSubmit)="onSubmit()" class="col col-lg-6 col-md-8 col-sm-12">
+      <form [formGroup]="frmLogin" (ngSubmit)="onSubmit(nombre.value,apellidos.value,usuario.value,password.value,email.value)" class="col col-lg-6 col-md-8 col-sm-12">
         <mat-form-field class="campos-field mt-3">
           <input matInput placeholder="Nombres" formControlName="nombres" #nombre>
         </mat-form-field>
@@ -47,6 +47,9 @@
         </p>
         <!--Buton de Registrar-->
         <button class="my-2 button-register" mat-raised-button color="primary" [disabled]="!frmLogin.valid || !terms.checked" >Registrar</button>
+        <div *ngIf="isRegistered" class="alert alert-primary" role="alert">
+          ¡Te has registrado correctamente!
+        </div>
       </form>
     </div>
   </mat-card>

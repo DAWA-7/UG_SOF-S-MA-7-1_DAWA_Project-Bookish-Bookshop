@@ -1,4 +1,4 @@
-import {UsusuarioService} from '../../../services/ususuario.service';
+import {UsuarioService} from '../../../services/usuario.service';
 import {User} from '../../../client/interfaces/user';
 import {AgregarUserComponent} from '../agregar-user/agregar-user.component';
 import {Component, OnInit} from '@angular/core';
@@ -19,7 +19,7 @@ export class ListarUserComponent implements OnInit {
   //para llamar al matdialog
   dataSource = new MatTableDataSource<any>;
 
-  constructor(private usuerService: UsusuarioService, public dialog: MatDialog) {
+  constructor(private usuerService: UsuarioService, public dialog: MatDialog) {
   }
 
   openDialog() {

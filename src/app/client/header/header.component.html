@@ -21,14 +21,14 @@
           <mat-icon style="color: white;">shopping_cart</mat-icon>
         </a>
 
-        <form *ngIf="!isUserRole">
+        <form *ngIf="userName == ''">
           <app-button-secondary [buttonName]="'Registrarse'" (click)="openSignUp()" class="mx-2"></app-button-secondary>
           <app-button-primary [buttonName]="'Iniciar sesión'" (click)="openLogIn()"></app-button-primary>
         </form>
 
-        <form *ngIf="isUserRole">
+        <form *ngIf="userName != ''">
           <i class="bi bi-caret-down-fill" style="color: white;"></i>
-          <app-button-primary [buttonName]="userName+'¿Nombre?'" mat-button [matMenuTriggerFor]="beforeMenu"></app-button-primary>
+          <app-button-primary [buttonName]="userName+''" mat-button [matMenuTriggerFor]="beforeMenu"></app-button-primary>
           <!-- <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button> -->
           <mat-menu #beforeMenu="matMenu" xPosition="before">
             <!-- <button mat-menu-item *ngFor="let item of listOptions"> {{item}} </button> -->
@@ -43,7 +43,7 @@
   </nav>
 </header>
 
-<!-- 
+<!--
   <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="">
@@ -97,7 +97,7 @@
       </ul>
     </div>
   </div>
-</nav> 
+</nav>
 -->
 
 <!--

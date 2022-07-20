@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
   ];
   listOptions: string[] = ['Perfil', 'Configuración'];
   userName: String = '';
-  isUserRole: boolean = false;
   /*  ----------------- */
   // isActiveInicio = true;
   // isActiveCatalogo = false;
@@ -32,15 +31,8 @@ export class HeaderComponent implements OnInit {
     // private dialog: MatDialog,
     private router: Router
   ) {
-    // this.isLogged = false;
-    // this.service.$modal.subscribe((valor) => {
-    //   this.isLogged = valor;
-    //   console.log('valor: ' + valor);
-    // });
-
-    this.isUserRole = false;
     this.service.$modal.subscribe((valor) => {
-      this.isUserRole = valor;
+      this.userName = valor;
       console.log('valor: ' + valor);
     });
   }
@@ -67,6 +59,7 @@ export class HeaderComponent implements OnInit {
   openCPanel() {
     this.router.navigate(['/cpanel']);
   }
+
   // ! Mantener constante al usuario logeado hasta que salga
 
   // navigateTo(module: string) {

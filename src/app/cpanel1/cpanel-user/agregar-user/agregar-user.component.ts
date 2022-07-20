@@ -1,4 +1,4 @@
-import {UsusuarioService} from '../../../services/ususuario.service';
+import {UsuarioService} from '../../../services/usuario.service';
 import {User} from '../../../client/interfaces/user';
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
@@ -15,7 +15,7 @@ export class AgregarUserComponent implements OnInit {
   actionBtn: string = "Guardar"
   userForm!: FormGroup
 
-  constructor(private formBuilder: FormBuilder, private _serviceUsuer: UsusuarioService,
+  constructor(private formBuilder: FormBuilder, private _serviceUsuer: UsuarioService,
               private router: Router, @Inject(MAT_DIALOG_DATA) public editarDatos: any, private dialogRef: MatDialogRef<AgregarUserComponent>) {
 
 
