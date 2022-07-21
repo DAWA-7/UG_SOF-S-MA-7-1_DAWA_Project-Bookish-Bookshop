@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {Router} from '@angular/router';
-import {WindowModelService} from '../../services/window-model.service';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { WindowModelService } from '../../services/window-model.service';
 
 @Component({
   selector: 'app-header',
@@ -32,13 +32,12 @@ export class HeaderComponent implements OnInit {
     private router: Router
   ) {
     this.service.$modal.subscribe((valor) => {
-      this.userName = valor
+      this.userName = valor;
       console.log('valor: ' + valor);
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   //#region Functions
   openSignUp(): void {
