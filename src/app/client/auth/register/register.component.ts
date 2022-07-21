@@ -14,7 +14,8 @@ export class RegisterComponent {
   public hide: boolean = true;
   date = new FormControl(new Date());
   public isRegistered: boolean = false;
-  constructor(private formBuilder: FormBuilder, private router: Router,private service: WindowModelService) {
+
+  constructor(private formBuilder: FormBuilder, private router: Router, private service: WindowModelService) {
     this.frmLogin = this.formBuilder.group({
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
@@ -28,9 +29,9 @@ export class RegisterComponent {
   onSubmit(nombres: string, apellidos: string, usuario: string, contrasena: string, email: string) {
     this.isRegistered = true;
     this.service.$modal.emit(usuario);
-    setTimeout(() =>{
+    setTimeout(() => {
       this.router.navigate(['/home']);
-    },3000)
+    }, 3000)
   }
 
 

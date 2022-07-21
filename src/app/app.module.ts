@@ -30,6 +30,14 @@ import { AgregarLibroComponent } from './cpanel1/cpanel-libro/agregar-libro/agre
 import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar-libro.component';
 import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
 import { CarritoSectionComponent } from './carrito-compra/carrito-section/carrito-section.component';
+import {
+  VerSugerenciasComponent
+} from "./cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component";
+import {SugerenciaComponent} from "./client/sugerencias/sugerencia/sugerencia.component";
+import {
+  AgregarSugerenciaComponent
+} from "./client/sugerencias/agregar-sugerencia/agregar-sugerencia.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +58,9 @@ import { CarritoSectionComponent } from './carrito-compra/carrito-section/carrit
     LibroComponent,
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,
+    VerSugerenciasComponent,
+    SugerenciaComponent,
+    AgregarSugerenciaComponent,
     CarritoCompraComponent,
     CarritoSectionComponent
   ],
