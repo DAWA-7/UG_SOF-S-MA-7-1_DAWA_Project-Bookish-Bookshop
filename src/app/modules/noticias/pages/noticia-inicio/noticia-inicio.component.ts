@@ -7,11 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./noticia-inicio.component.css'],
 })
 export class NoticiaInicioComponent implements OnInit {
+  // #region Variable Declaration
+
+  // #endregion
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  navigateToArticulo() {
+  // #region Functions
+  openArticle() {
     this.router.navigate(['noticias/articulo']);
   }
+  // #endregion
 }
