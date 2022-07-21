@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
     {name: 'Inicio', address: '/home'},
     {name: 'Catalogo', address: '/mostrar-catalogo'},
     {name: 'Noticias', address: '/noticias'},
-    {name: 'Sugerencias', address: '#'},
+    {name: 'Sugerencias', address: '/sugerencias'},
   ];
   listOptions: string[] = ['Perfil', 'Configuración'];
   userName: String = '';

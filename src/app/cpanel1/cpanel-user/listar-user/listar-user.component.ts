@@ -46,7 +46,6 @@ export class ListarUserComponent implements OnInit {
   editUsuario(element: any) {
     this.dialog.open(AgregarUserComponent, {
       data: element
-
     })
 
 

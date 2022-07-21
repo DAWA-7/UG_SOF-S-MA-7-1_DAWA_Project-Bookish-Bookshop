@@ -28,6 +28,13 @@ import { ButtonPrimaryComponent } from './shared/components/buttons/button-prima
 import { ButtonSecondaryComponent } from './shared/components/buttons/button-secondary/button-secondary.component';
 import { AgregarLibroComponent } from './cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
 import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar-libro.component';
+import {
+  VerSugerenciasComponent
+} from "./cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component";
+import {SugerenciaComponent} from "./client/sugerencias/sugerencia/sugerencia.component";
+import {
+  AgregarSugerenciaComponent
+} from "./client/sugerencias/agregar-sugerencia/agregar-sugerencia.component";
 
 @NgModule({
   declarations: [
@@ -49,6 +56,9 @@ import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar
     LibroComponent,
     ButtonPrimaryComponent,
     ButtonSecondaryComponent,
+    VerSugerenciasComponent,
+    SugerenciaComponent,
+    AgregarSugerenciaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+<div id="contenedor-principal">
+  <div class="division"><h2>Recomendaciones</h2>
+    <div class="linea"></div>
+  </div>
+
+  <div class="row">
+    <div class="col col-sm-5 m-auto">
+      <mat-card>
+        <mat-card-title>{{recomendaciones[0].titulo}}</mat-card-title>
+        <mat-card-content>
+          <p>{{recomendaciones[0].descripcion}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col col-sm-5 m-auto mt-sm-1 w-75 ">
+      <mat-card>
+        <mat-card-title>{{recomendaciones[1].titulo}}</mat-card-title>
+        <mat-card-content>
+          <p>{{recomendaciones[1].descripcion}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col col-sm-11 m-auto mt-sm-1">
+      <mat-card>
+        <mat-card-title>{{recomendaciones[2].titulo}}</mat-card-title>
+        <mat-card-content>
+          <p>{{recomendaciones[2].descripcion}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="division"><h2>Formulario</h2>
+    <div class="linea"></div>
+  </div>
+  <app-agregar-sugerencia></app-agregar-sugerencia>
+</div>
+
+
