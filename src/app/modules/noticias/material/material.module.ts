@@ -39,4 +39,4 @@ const MaterialComponents = [
   imports: [CommonModule, MaterialComponents],
   exports: [MaterialComponents],
 })
-export class MaterialNoticiasModule {} // add to imports at noticias.module.ts
+export class MaterialModule {} // add to imports at noticias.module.ts

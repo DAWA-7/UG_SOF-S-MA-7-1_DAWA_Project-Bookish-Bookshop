@@ -8,15 +8,15 @@ import { Router } from '@angular/router';
 })
 export class NoticiaCard1Component implements OnInit {
   // #region Variable Declaration
-  @Input() id = 0;
-  @Input() title = '';
-  @Input() author = '';
-  @Input() img = '';
-  @Input() date = '';
-  @Input() content = '';
-
+  @Input() itemData: any;
+  // @Input() id = 0;
+  // @Input() title = '';
+  // @Input() author = '';
+  // @Input() img = '';
+  // @Input() date = '';
+  // @Input() content = '';
+  contentShort: string = '';
   // #endregion
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

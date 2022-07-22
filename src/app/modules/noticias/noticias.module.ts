@@ -7,7 +7,7 @@ import { NoticiaInicioComponent } from './pages/noticia-inicio/noticia-inicio.co
 import { NoticiaArticuloComponent } from './pages/noticia-articulo/noticia-articulo.component';
 import { NoticiaCard1Component } from './components/noticia-card1/noticia-card1.component';
 import { NoticiaCard2Component } from './components/noticia-card2/noticia-card2.component';
-import { MaterialNoticiasModule } from './material-noticias/material-noticias.module';
+import { MaterialModule } from './material/material.module';
 import { NoticiaArticulo1Component } from './components/noticia-articulo1/noticia-articulo1.component';
 
 @NgModule({
@@ -19,6 +19,6 @@ import { NoticiaArticulo1Component } from './components/noticia-articulo1/notici
     NoticiaCard2Component,
     NoticiaArticulo1Component,
   ],
-  imports: [CommonModule, NoticiasRoutingModule, MaterialNoticiasModule],
+  imports: [CommonModule, NoticiasRoutingModule, MaterialModule],
 })
 export class NoticiasModule {}

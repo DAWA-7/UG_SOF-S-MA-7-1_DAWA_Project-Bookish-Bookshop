@@ -22,9 +22,11 @@
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
 
-          <app-noticia-card1 [id]="item.id" [title]="item.title" [author]="item.author" [img]="item.img" [date]="item.date" [content]="item.content" *ngFor="let item of listNews">
+          <!-- <app-noticia-card1 [id]="item.id" [title]="item.title" [author]="item.author" [img]="item.img" [date]="item.date" [content]="item.content" *ngFor="let item of listNews">
 
-          </app-noticia-card1>
+          </app-noticia-card1> -->
+
+          <app-noticia-card1 [itemData]="item" *ngFor="let item of listNews"></app-noticia-card1>
 
         </div>
       </div>

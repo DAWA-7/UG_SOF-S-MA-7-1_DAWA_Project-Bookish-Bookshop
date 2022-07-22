@@ -2,23 +2,23 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>
-      {{title}}
+      {{itemData.title}}
     </mat-card-title>
 
     <mat-card-subtitle>
-      {{author}}
+      {{itemData.author}}
     </mat-card-subtitle>
   </mat-card-header>
 
-  <img mat-card-image src="{{img}}" alt="img-{{img}}">
+  <img mat-card-image src="{{itemData.img}}" alt="img-{{itemData.id}}">
 
   <mat-card-content>
     <mat-card-subtitle>
-      {{date}}
+      {{itemData.date}}
     </mat-card-subtitle>
 
     <p>
-      {{content}}
+      {{itemData.content.substring(0, 75)}}...
     </p>
   </mat-card-content>
 
