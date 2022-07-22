@@ -5,7 +5,7 @@ import { Book } from '../client/interfaces/book';
   providedIn: 'root',
 })
 export class CatalogoService {
-  categorias: Categoria[] = [
+  listCategorias: Categoria[] = [
     { id_categoria: 1, nombre_categoria: 'Ciencia Ficción' },
     { id_categoria: 2, nombre_categoria: 'Clásicos' },
     { id_categoria: 3, nombre_categoria: 'Histórica' },
@@ -14,7 +14,7 @@ export class CatalogoService {
     { id_categoria: 6, nombre_categoria: 'Terror' },
   ];
 
-  libros: Book[] = [
+  listLibros: Book[] = [
     {
       id_libro: 1,
       autor: 'Federico Moccia',
@@ -108,19 +108,19 @@ export class CatalogoService {
   constructor() {}
 
   getLibro() {
-    return this.libros.slice();
+    return this.listLibros.slice();
   }
   agregarLibro(data: Book) {
-    this.libros.unshift(data);
+    this.listLibros.unshift(data);
   }
 
   updateLibro(data: Book) {
-    var id = this.libros.find((libro) => libro.id_libro == data.id_libro);
+    var id = this.listLibros.find((libro) => libro.id_libro == data.id_libro);
     if (data.id_libro == id?.id_libro) {
-      var index = this.libros.findIndex(
+      var index = this.listLibros.findIndex(
         (libro) => libro.id_libro == data.id_libro
       );
-      this.libros[index] = data;
+      this.listLibros[index] = data;
     }
   }
 

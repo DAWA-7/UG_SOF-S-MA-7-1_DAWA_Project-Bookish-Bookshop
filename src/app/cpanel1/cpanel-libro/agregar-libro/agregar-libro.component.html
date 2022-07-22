@@ -1,36 +1,101 @@
 <h1 mat-dialog-title>Modificar Usuario</h1>
 <div mat-dialog-content>
 
-    <form [formGroup]='bookForm' class="example-form" (ngSubmit)="agregarLibro()">
+    <form [formGroup]='bookForm' (ngSubmit)="agregarLibro()">
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Cédula</mat-label>
-            <input formControlName="cedula" type="number" matInput placeholder="912365478" #cedula>
-        </mat-form-field>
-        <br>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nombre completo</mat-label>
-            <input matInput formControlName="nombres" type="text" placeholder="Guillermo Rafael" #nombres>
-        </mat-form-field>
-        <br>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 100px;">
+                    <mat-label>ID</mat-label>
+                    <input formControlName="id_libro" type="number" matInput #id_libro>
+                </mat-form-field>
+                <br>
+            </div>
+        </div>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Usuario</mat-label>
-            <input formControlName="usuario" type="text" matInput placeholder="guillera" #usuario>
-        </mat-form-field>
-        <br>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Título</mat-label>
+                    <input matInput formControlName="titulo" type="text" placeholder="Inserte el título" #titulo>
+                </mat-form-field>
+                <br>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Correo</mat-label>
-            <input formControlName="correo" matInput placeholder="correo@algo.com" #correo>
-        </mat-form-field>
-        <br>
+                <mat-form-field class="example-full-width" appearance="fill" style="width: 500px;">
+                    <mat-label>Descripción</mat-label>
+                    <textarea matInput formControlName="descripcion" type="text" placeholder="Inserte la descripción"
+                        rows="8" cols="40" #descripcion></textarea>
+                </mat-form-field>
+                <br>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Contraseña</mat-label>
-            <input formControlName="contrasenia" type="password" matInput placeholder="*********" #contrasenia>
-        </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Categoría</mat-label>
+                    <mat-select formControlName="id_categoria">
+                        <mat-option *ngFor="let categoria of listCategorias" [value]="categoria.nombre_categoria">
+                            {{categoria.nombre_categoria}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>ISBN</mat-label>
+                    <input formControlName="isbn" type="number" matInput placeholder="Inserte el ISBN(13)" #isbn>
+                </mat-form-field>
+                <br>
+
+            </div>
+            <div class="col">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Autor</mat-label>
+                    <input formControlName="autor" type="text" matInput placeholder="Inserte el autor" #autor>
+                </mat-form-field>
+                <br>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Editorial</mat-label>
+                    <input formControlName="editorial" matInput placeholder="Inserte la editorial" #editorial>
+                </mat-form-field>
+                <br>
+
+                <div class="row">
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 200px;">
+                        <mat-label>Precio</mat-label>
+                        <input formControlName="precio" type="number" matInput placeholder="Inserte el precio" #precio>
+                    </mat-form-field>
+                    <br>
+
+                    <mat-form-field class="example-full-width" appearance="fill" style="width: 250px;">
+                        <mat-label>Número de páginas</mat-label>
+                        <input formControlName="num_paginas" type="number" matInput
+                            placeholder="Inserte el total de páginas" #num_paginas>
+                    </mat-form-field>
+                    <br>
+                </div>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Fecha de Publicación</mat-label>
+                    <input formControlName="fecha_publicacion" type="date" matInput
+                        placeholder="Inserte la fecha de publicación" #fecha_publicacion>
+                </mat-form-field>
+                <br>
+                <!--
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Imagen</mat-label>
+                    <input formControlName="imagen" type="file" accept=".jpg,.png" class="button"
+                        (change)="uploadImage($event)" #imagen />
+                </mat-form-field>
+                <br>
+                
+                <mat-form-field>
+                    <div>
+                        <img [src]="archivos[0]" alt="">
+                    </div>
+                </mat-form-field>
+                -->
+            </div>
+        </div>
 
         <div class="divBtnModificar">
             <button type="submit" [disabled]="bookForm.invalid" mat-raised-button color="primary">{{actionBtn}}</button>

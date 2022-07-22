@@ -18,12 +18,12 @@
         <!-- Name Column -->
         <ng-container matColumnDef="id_libro">
             <th mat-header-cell *matHeaderCellDef> ID</th>
-            <td mat-cell *matCellDef="let element" class='m-card-title'> {{element.id_libro} </td>
+            <td mat-cell *matCellDef="let element"> {{element.id_libro}} </td>
         </ng-container>
 
         <ng-container matColumnDef="titulo">
             <th mat-header-cell *matHeaderCellDef> Título </th>
-            <td mat-cell *matCellDef="let element" class='m-card-sub-title'> {{element.titulo} </td>
+            <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
         </ng-container>
 
         <ng-container matColumnDef="editorial">
@@ -33,7 +33,12 @@
 
         <ng-container matColumnDef="autor">
             <th mat-header-cell *matHeaderCellDef> Autor </th>
-            <td mat-cell *matCellDef="let element" class='has_label_on_mobile'> {{element.autor} </td>
+            <td mat-cell *matCellDef="let element"> {{element.autor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef> Precio </th>
+            <td mat-cell *matCellDef="let element"> ${{element.precio}} </td>
         </ng-container>
 
         <ng-container matColumnDef="opciones">

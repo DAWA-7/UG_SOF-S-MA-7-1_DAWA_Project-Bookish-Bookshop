@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 export class ListarLibroComponent{
 
   listLibros: Book[] = []
-  displayedColumns: string[] = ['id_libro', 'titulo', 'editorial', 'autor', 'opciones'];
+  displayedColumns: string[] = ['id_libro', 'titulo', 'editorial', 'autor', 'precio', 'opciones'];
   //para llamar al matdialog
   dataSource = new MatTableDataSource<any>;
 
