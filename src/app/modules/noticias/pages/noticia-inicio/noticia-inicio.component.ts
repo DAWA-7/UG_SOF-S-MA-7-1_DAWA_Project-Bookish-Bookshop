@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import newsData from '../../assets-noticias/data/News_MOCK_DATA.json';
+import { News } from '../../interfaces/news';
 
 @Component({
   selector: 'app-noticia-inicio',
@@ -8,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class NoticiaInicioComponent implements OnInit {
   // #region Variable Declaration
-
+  listNews: News[] = newsData;
+  years = '';
+  listYears: String[] = ['2022', '2021'];
   // #endregion
 
   constructor(private router: Router) {}
@@ -16,8 +20,8 @@ export class NoticiaInicioComponent implements OnInit {
   ngOnInit(): void {}
 
   // #region Functions
-  openArticle() {
-    this.router.navigate(['noticias/articulo']);
-  }
+
+  filterNewsByYear(listNews: News[], listYears: string[]) {}
+
   // #endregion
 }

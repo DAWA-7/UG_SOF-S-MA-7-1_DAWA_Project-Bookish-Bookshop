@@ -1,3 +1,28 @@
-<p>noticia-card1 works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      {{title}}
+    </mat-card-title>
 
-<app-noticia-articulo1></app-noticia-articulo1>
+    <mat-card-subtitle>
+      {{author}}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image src="{{img}}" alt="img-{{img}}">
+
+  <mat-card-content>
+    <mat-card-subtitle>
+      {{date}}
+    </mat-card-subtitle>
+
+    <p>
+      {{content}}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="openArticle()">Ver más...</button>
+  </mat-card-actions>
+</mat-card>

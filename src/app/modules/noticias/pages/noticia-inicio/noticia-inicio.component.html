@@ -1,68 +1,33 @@
-<!-- Sección 1  -->
-<section id="section-1" class="row">
+<div class="container-xl">
+  <mat-form-field>
+    <mat-label>Filtro</mat-label>
+    <input matInput appearance="outline" placeholder="Buscar" #input>
+    <mat-icon matPrefix>search</mat-icon>
+  </mat-form-field>
 
-  <!-- col Izquierda -->
-  <div id="left" class="col-md-8">
-    <div id="img-1" class="row" (click)="openArticle()">
-      <div class="continer-img">
-        <img class="img-fluid" src="assets/img/modules/noticias/img-01.jpg" alt="img-1">
-        <h3>Izquierda img-1</h3>
-      </div>
-    </div>
+  <mat-sidenav-container class="news-container">
+    <mat-sidenav class="side-nav" mode="side" opened>
+      <mat-action-list>
+        <button mat-list-item (click)="years= '2022'">
+          Recientes
+        </button>
 
-    <div class="row">
-      <div id="img-2" class="col-md-6">
-        <img class="img-fluid" src="assets/img/modules/noticias/cut/img-02.jpg" alt="img-2">
-        <h3>Izquierda img-2</h3>
-      </div>
+        <button mat-list-item *ngFor="let item of listYears" (click)="years = item+''">
+          {{item}}
+        </button>
+      </mat-action-list>
+    </mat-sidenav>
 
-      <div id="img-3" class="col-md-6">
-        <img class="img-fluid" src="assets/img/modules/noticias/cut/img-03.jpg" alt="img-3">
-        <h3>Izquierda img-3</h3>
-      </div>
-    </div>
-  </div>
+    <mat-sidenav-content class="content">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
 
-  <!--col derecha -->
-  <div id="right" class="col-md-4">
-    <h3>TRENDING</h3>
+          <app-noticia-card1 [id]="item.id" [title]="item.title" [author]="item.author" [img]="item.img" [date]="item.date" [content]="item.content" *ngFor="let item of listNews">
 
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="assets/img/modules/noticias/img-04.jpg" class="img-fluid " alt="img-4">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+          </app-noticia-card1>
+
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="separator"></div>
-
-<!-- Sección 2 -->
-<section id="Section-2">
-  <h3>Sección 2</h3>
-  <img class="img-fluid" src="assets/img/modules/noticias/img-08.jpg" alt="img-8">
-</section>
-
-<div class="separator"></div>
-
-<!-- Sección 3 -->
-<section id="Section-3" class="row  align-items-center">
-  <h3>Sección 3</h3>
-  <div class="col-6">
-    <img src="assets/img/modules/noticias/img-09.jpg" alt="img-9">
-  </div>
-
-  <div class="col-6">
-    <img src="assets/img/modules/noticias/img-10.jpg" alt="img-10">
-  </div>
-</section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,56 +1,26 @@
-/*! Not importing typography.css*/
-
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
+.news-container {
+  height: 100vh;
+  background: #eee;
 }
 
-.separator {
-  outline: solid var(--pc-amparo-blue);
-  height: 90px;
+.side-nav {
+  width: 25%;
 }
 
-/* #region Section-1*/
-section[id^="Section"] {
-  outline: solid forestgreen;
+mat-action-list {
+  margin-top: 20px;
 }
 
-#Section-1 {
-  background-color: var(--pc-amparo-blue);
-  /* height: 675px; */
-  /* max-height: 670px; */
-}
-#section-1 #left {
-  background-color: yellow;
-  /* width: 683px; */
+.mat-form-field {
+  margin-top: 40px;
+  margin-left: 15px;
 }
 
-#section-1 #left img {
-  object-fit: cover;
-  width: 100%;
-  max-height: 330px;
-  background-color: aqua;
-  outline: solid blue;
+input {
+  border-radius: 20px black !important;
 }
 
-#section-1 #left img:hover {
-  transform: scale(1.075);
-  -webkit-transform: scale(1.075);
-  -moz-transform: scale(1.075);
-  -ms-transform: scale(1.075);
-  -o-transform: scale(1.075);
+.row > * {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
-#section-1 #right {
-  background-color: brown;
-  /* width: 390px; */
-}
-
-#right img {
-  object-fit: cover;
-  height: 100%;
-  max-width: 128px;
-  max-height: 128px;
-}
-
-/* #endregion */
