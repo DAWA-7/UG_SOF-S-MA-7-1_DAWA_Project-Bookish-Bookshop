@@ -36,11 +36,20 @@ const routes: Routes = [
     path: 'cpanel',
     component: CPanelComponent,
     children: [
-      { path: '', component: CPanelHomeComponent },
-      { path: 'lista-libros', component: ListarLibroComponent },
+      {
+        path: '',
+        component: CPanelHomeComponent,
+      },
+      { path: 'libros', component: ListarLibroComponent },
       { path: 'agregar-libros', component: AgregarLibroComponent },
-      { path: 'users', component: ListarUserComponent },
-      { path: 'sugerencias', component: VerSugerenciasComponent },
+      {
+        path: 'users',
+        component: ListarUserComponent,
+      },
+      {
+        path: 'sugerencias',
+        component: VerSugerenciasComponent,
+      },
     ],
   },
 ];
