@@ -19,3 +19,7 @@ mat-action-list {
 input {
   border-radius: 20px black !important;
 }
+
+.content{
+  padding: 10px;
+}

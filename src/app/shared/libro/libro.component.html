@@ -1,18 +1,15 @@
-<div class="card" [routerLink]="'/detalle-libro'">
-    <img src="../../assets/img/books/{{imagen}}" alt="{{titulo}}" class="card-img-top" />
-    <div class="card-body">
-        <p class="book-name">{{titulo}}</p>
-        <p class="book-autor">{{autor}}</p>
-    </div>
-    <div class="card-footer btn">
-        <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm" style="font-size: 20px; font-weight: bold; text-align: center">
-                ${{precio.toFixed(2)}}
-            </div>
-            <div class="col-sm cart-comprar">
+<mat-card class="card-libro" [routerLink]="'/detalle-libro'">
+    <img mat-card-image src="../../assets/img/books/{{imagen}}" alt="{{titulo}}" class="card-img-top" />
+    <mat-card-header>
+        <mat-card-title>{{titulo}}</mat-card-title>
+        <mat-card-subtitle>{{autor}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <div style="font-size: 20px; font-weight: bold; text-align: center">
+            ${{precio.toFixed(2)}}
+            <button mat-button class="col-sm cart-comprar">
                 <i class="bi bi-cart-fill" style="font-size: 1.5rem"></i>
-            </div>
+            </button>
         </div>
-    </div>
-</div>
+    </mat-card-actions>
+</mat-card>
