@@ -1,28 +1,32 @@
 <mat-card class="example-card">
+
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>
-      {{itemData.title}}
+    <mat-card-title class="typo-h5">
+      {{itemDataInput.title}}
     </mat-card-title>
 
     <mat-card-subtitle>
-      {{itemData.author}}
+      {{itemDataInput.author}}
     </mat-card-subtitle>
   </mat-card-header>
 
-  <img mat-card-image src="{{itemData.img}}" alt="img-{{itemData.id}}">
+  <img mat-card-image src="{{itemDataInput.img}}" alt="img-{{itemDataInput.id}}">
 
   <mat-card-content>
     <mat-card-subtitle>
-      {{itemData.date}}
+      {{itemDataInput.date}}
     </mat-card-subtitle>
 
     <p>
-      {{itemData.content.substring(0, 75)}}...
+      {{itemDataInput.content.substring(0, 75)}}...
     </p>
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-button (click)="openArticle()">Ver más...</button>
+    <button mat-button class="typo-link" (click)="openArticle(itemDataInput)">
+      Ver más...
+    </button>
   </mat-card-actions>
+
 </mat-card>

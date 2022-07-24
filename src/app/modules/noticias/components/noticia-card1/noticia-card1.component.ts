@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { NoticiasService } from 'src/app/services/modules/noticias/noticias.service';
 
 @Component({
   selector: 'app-noticia-card1',
@@ -8,21 +9,22 @@ import { Router } from '@angular/router';
 })
 export class NoticiaCard1Component implements OnInit {
   // #region Variable Declaration
-  @Input() itemData: any;
-  // @Input() id = 0;
-  // @Input() title = '';
-  // @Input() author = '';
-  // @Input() img = '';
-  // @Input() date = '';
-  // @Input() content = '';
+  @Input() itemDataInput: any;
   contentShort: string = '';
+  newsItem: any;
   // #endregion
-  constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  constructor(private router: Router, private data: NoticiasService) {}
+
+  ngOnInit(): void {
+    this.data.currentNewsItem.subscribe(
+      (newsItem) => (this.newsItem = newsItem)
+    );
+  }
 
   // #region Functions
-  openArticle() {
+  openArticle(itemDataSend: any) {
+    this.data.changeNewsItem(itemDataSend);
     this.router.navigate(['noticias/articulo']);
   }
   // #endregion

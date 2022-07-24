@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      // "@newsL": ["assets/img/modules/noticias/*"],
-      "@newsS": [""]
-    }
-  }
-}

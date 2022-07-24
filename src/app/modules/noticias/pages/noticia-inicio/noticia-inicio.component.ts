@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import newsData from '../../assets/json/data/News_MOCK_DATA.json';
+import newsData from '../../assets/json/News_MOCK_DATA.json';
 import { News } from '../../interfaces/news';
 
 @Component({

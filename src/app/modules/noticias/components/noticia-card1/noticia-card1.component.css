@@ -6,3 +6,25 @@
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
 }
+
+img {
+  object-fit: cover;
+  /* width: 100%; */
+  max-height: 190px;
+}
+
+.typo-link {
+  font-family: var(--ff-fresca);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-p);
+  line-height: var(--lg-p);
+  color: var(--pc-amparo-blue);
+  text-decoration: underline;
+}
+
+.typo-h5 {
+  font-family: var(--ff-fredoka);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-h4);
+  line-height: var(--lg-h5);
+}

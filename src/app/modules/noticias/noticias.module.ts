@@ -21,4 +21,4 @@ import { NoticiaArticulo1Component } from './components/noticia-articulo1/notici
   ],
   imports: [CommonModule, NoticiasRoutingModule, MaterialModule],
 })
-export class NoticiasModule {}
+export class NoticiasModule {} // import at app.modules.ts
