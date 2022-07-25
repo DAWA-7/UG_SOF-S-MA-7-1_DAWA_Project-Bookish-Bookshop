@@ -27,8 +27,8 @@
   <div class="row">
     <!-- #region Novedades -->
     <h1>NOVEDADES</h1>
-    <div class="col-md-8 ">
-      <div class="row row-cols-4">
+    <div class="col col-ms-2">
+      <div class="row row-cols-1 row-cols-sm-4 ms-3 me-3">
         <app-libro class="col" [InputLibros]="libro"
           *ngFor="let libro of filtrarCategoria(listLibros, listCategorias, 0)">
           {{libro}}</app-libro>
@@ -37,7 +37,7 @@
     <!-- #endregion -->
 
     <!-- #region News highlight -->
-    <div class="col-6 col-md-4">
+    <div class="col-11 col-md-4 ms-3">
       <h1>Noticias destacadas</h1>
 
       <div class="card mb-3" style="max-width: 440px" *ngFor="let item of listNewsHighlight">
