@@ -1,13 +1,13 @@
-<p>car.articulo1</p>
-
-<div>
+<div id="container">
   <img class="img-fluid" src="{{itemDataInput.img}}" alt="imag-{{itemDataInput.id}}">
 
-  <h3>{{itemDataInput.title}}</h3>
-  <h3>{{itemDataInput.author}}</h3>
-  <h3>{{itemDataInput.date}}</h3>
+  <div id="head" class="col-md-10 mx-auto">
+    <h2> {{itemDataInput.title}} </h2>
+    <h5> {{itemDataInput.author}} </h5>
+    <h5> {{itemDataInput.date}} </h5>
+  </div>
 
-  <div class="container-md">
+  <div id="content" class="col-md-8 mx-auto">
     <p>
       {{itemDataInput.content}}
     </p>
