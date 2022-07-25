@@ -26,29 +26,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { NoticiasModule } from './modules/noticias/noticias.module';
 import { ButtonPrimaryComponent } from './shared/components/buttons/button-primary/button-primary.component';
 import { ButtonSecondaryComponent } from './shared/components/buttons/button-secondary/button-secondary.component';
-<<<<<<< HEAD
-import { AgregarLibroComponent } from './cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
-import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar-libro.component';
-import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
-import { CarritoSectionComponent } from './carrito-compra/carrito-section/carrito-section.component';
-import { VerSugerenciasComponent } from './cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
-import { SugerenciaComponent } from './client/sugerencias/sugerencia/sugerencia.component';
-import { AgregarSugerenciaComponent } from './client/sugerencias/agregar-sugerencia/agregar-sugerencia.component';
-import { DatePipe } from '@angular/common';
-=======
 import { AgregarLibroComponent } from './admin/cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
 import { ListarLibroComponent } from './admin/cpanel1/cpanel-libro/listar-libro/listar-libro.component';
 import { CarritoCompraComponent } from './modules/carrito-compra/carrito-compra.component';
 import { CarritoSectionComponent } from './modules/carrito-compra/carrito-section/carrito-section.component';
-import {
-  VerSugerenciasComponent
-} from "./admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component";
-import {SugerenciaComponent} from "./modules/sugerencias/sugerencia/sugerencia.component";
-import {
-  AgregarSugerenciaComponent
-} from "./modules/sugerencias/agregar-sugerencia/agregar-sugerencia.component";
->>>>>>> 9df5538e7f16fddb5c33797c5d244b22bdd26580
-
+import { VerSugerenciasComponent } from './admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
+import { SugerenciaComponent } from './modules/sugerencias/sugerencia/sugerencia.component';
+import { AgregarSugerenciaComponent } from './modules/sugerencias/agregar-sugerencia/agregar-sugerencia.component';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
