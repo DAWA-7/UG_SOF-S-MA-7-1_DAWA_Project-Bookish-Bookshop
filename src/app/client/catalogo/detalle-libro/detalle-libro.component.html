@@ -27,7 +27,7 @@
         <h2>Detalles</h2>
         <p>
           Editorial: {{InputLibros.editorial}}<br>
-          Fecha de publicación: {{InputLibros.fecha_publicacion}}<br>
+          Fecha de publicación: {{format(InputLibros.fecha_publicacion)}}<br>
           Páginas: {{InputLibros.num_paginas}}<br>
           ISBN: {{InputLibros.isbn}}<br>
         </p>
@@ -36,7 +36,7 @@
     <div class="col-lg-5">
       <div class="container color">
         <h2>Categorías</h2>
-        <button class="button">Fantasía y Magia</button>
+        <button class="button">{{mostrarCategoria(InputLibros.id_categoria)}}</button>
       </div>
     </div>
   </div>

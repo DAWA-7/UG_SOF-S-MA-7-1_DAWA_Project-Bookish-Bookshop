@@ -166,4 +166,10 @@ export class CatalogoService {
     });*/
     return libros;
   }
+
+  mostrarCategoria(id: number) {
+    var nom = this.listCategorias.find((categ) => categ.id_categoria == id);
+    console.log(nom?.nombre_categoria);
+    return nom?.nombre_categoria;
+  }
 }

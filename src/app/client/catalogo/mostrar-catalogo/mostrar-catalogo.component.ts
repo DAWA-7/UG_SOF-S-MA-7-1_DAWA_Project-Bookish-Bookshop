@@ -27,7 +27,7 @@ export class MostrarCatalogoComponent implements OnInit {
       autor: 'Federico Moccia',
       editorial: 'Planeta',
       id_categoria: 4 /*Juvenil*/,
-      fecha_publicacion: new Date(16 / 6 / 2020),
+      fecha_publicacion: new Date('2020-06-16'),
       num_paginas: 464,
       isbn: '9788408230496',
       descripcion:
@@ -41,7 +41,7 @@ export class MostrarCatalogoComponent implements OnInit {
       autor: 'Juan Carlos Florez',
       editorial: 'Ariel',
       id_categoria: 3 /*Histórica*/,
-      fecha_publicacion: new Date(24 / 5 / 2021),
+      fecha_publicacion: new Date('2021-05-24'),
       num_paginas: 356,
       isbn: '9789584294647',
       descripcion:
@@ -56,7 +56,7 @@ export class MostrarCatalogoComponent implements OnInit {
       autor: 'Jennifer McMahon',
       editorial: 'Planeta',
       id_categoria: 1 /*Ciencia Ficción*/,
-      fecha_publicacion: new Date(16 / 8 / 2021),
+      fecha_publicacion: new Date('2021-08-16'),
       num_paginas: 496,
       isbn: '9786070778087',
       descripcion:
@@ -70,7 +70,7 @@ export class MostrarCatalogoComponent implements OnInit {
       autor: 'Jennifer Lynn Barnes',
       editorial: 'Molino',
       id_categoria: 6 /*Juvenil, Terror*/,
-      fecha_publicacion: new Date(17 / 3 / 2022),
+      fecha_publicacion: new Date('2022-03-17'),
       num_paginas: 448,
       isbn: '9788427223622',
       descripcion:
@@ -85,7 +85,7 @@ export class MostrarCatalogoComponent implements OnInit {
       autor: 'Megan Maxwell',
       editorial: 'Esencia',
       id_categoria: 5 /*Romance*/,
-      fecha_publicacion: new Date(29 / 10 / 2020),
+      fecha_publicacion: new Date('2020-10-29'),
       num_paginas: 672,
       isbn: '9788408233350',
       descripcion:
@@ -101,7 +101,7 @@ export class MostrarCatalogoComponent implements OnInit {
       autor: 'Alexandre Dumas',
       editorial: 'Plutón',
       id_categoria: 2 /*Clásico*/,
-      fecha_publicacion: new Date(6 / 8 / 2020),
+      fecha_publicacion: new Date('2020-08-06'),
       num_paginas: 1188,
       isbn: '9788417928926',
       descripcion:
@@ -127,9 +127,5 @@ export class MostrarCatalogoComponent implements OnInit {
     categoria: number
   ) {
     return this._service.filtrarCategoria(listLibros, listCategoria, categoria);
-  }
-
-  mostrarCategoria(id: number) {
-    return this.listCategorias[id].nombre_categoria;
   }
 }
