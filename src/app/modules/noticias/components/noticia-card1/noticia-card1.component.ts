@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { NoticiasService } from 'src/app/services/modules/noticias/noticias.service';
+import { NoticiasService } from 'src/app/shared/services/modules/noticias/noticias.service';
 
 @Component({
   selector: 'app-noticia-card1',
