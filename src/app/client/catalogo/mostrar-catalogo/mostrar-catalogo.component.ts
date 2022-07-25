@@ -11,7 +11,7 @@ import { LibroComponent } from 'src/app/shared/libro/libro.component';
 export class MostrarCatalogoComponent implements OnInit {
   categoria = 0;
 
-  listCategoria: Categoria[] = [
+  listCategorias: Categoria[] = [
     { id_categoria: 1, nombre_categoria: 'Ciencia Ficción' },
     { id_categoria: 2, nombre_categoria: 'Clásicos' },
     { id_categoria: 3, nombre_categoria: 'Histórica' },
@@ -146,5 +146,9 @@ export class MostrarCatalogoComponent implements OnInit {
       }
     });*/
     return libros;
+  }
+
+  mostrarCategoria(id: number) {
+    return this.listCategorias[id].nombre_categoria;
   }
 }
