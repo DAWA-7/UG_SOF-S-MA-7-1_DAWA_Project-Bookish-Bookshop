@@ -1,0 +1,29 @@
+<div class="container my-5 " >
+  <mat-card class="border-top border-secondary">
+    <mat-card-title class="row my-4 text-center">Inicia Sesión</mat-card-title>
+    <mat-card-subtitle class="row my-3 text-center">Entérate de todas las novedades de tus autores favoritos</mat-card-subtitle>
+    <form [formGroup]="frmLogin" (ngSubmit)="onSubmit(usuario.value, password.value)">
+      <mat-form-field class="campos-field mt-3">
+        <input matInput placeholder="Usuario" formControlName="usuario" #usuario>
+      </mat-form-field>
+      <mat-form-field class="campos-field">
+        <input matInput placeholder="Password" type="password" formControlName="password"  #password>
+      </mat-form-field>
+      <div class="row mt-2 align-items-center">
+        <div class="col-6 ms-4 ">
+          <mat-checkbox color="primary" class="checbox-field" >
+            Sigue conectado
+          </mat-checkbox>
+        </div>
+        <div class="col-12 ms-4 mt-3 col-sm-4 p-md-0 ">
+          <a href="" class="forgot-password" style="text-decoration:none">Olvide la contraseña </a>
+        </div>
+      </div>
+      <button class="my-4" mat-raised-button style="background-color: var(--pc-hole-in-one); color: white" >Iniciar</button>
+      <div *ngIf="error" class="alert alert-danger" role="alert">
+        ¡Usuario o Contraseña incorrecta!
+      </div>
+      <a href="/register" class="register-link">¿Nuevo? Registrate aquí.</a>
+    </form>
+  </mat-card>
+</div>

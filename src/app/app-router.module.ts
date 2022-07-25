@@ -1,26 +1,26 @@
-import { AgregarLibroComponent } from './cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
-import { ListarLibroComponent } from './cpanel1/cpanel-libro/listar-libro/listar-libro.component';
-import { AgregarUserComponent } from './cpanel1/cpanel-user/agregar-user/agregar-user.component';
+import { AgregarLibroComponent } from './admin/cpanel1/cpanel-libro/agregar-libro/agregar-libro.component';
+import { ListarLibroComponent } from './admin/cpanel1/cpanel-libro/listar-libro/listar-libro.component';
+import { AgregarUserComponent } from './admin/cpanel1/cpanel-user/agregar-user/agregar-user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './client/auth/login/login.component';
-import { HomeComponent } from './client/home/home.component';
-import { MostrarCatalogoComponent } from './client/catalogo/mostrar-catalogo/mostrar-catalogo.component';
-import { ListarUserComponent } from './cpanel1/cpanel-user/listar-user/listar-user.component';
-import { RegisterComponent } from './client/auth/register/register.component';
-import { DetalleLibroComponent } from './client/catalogo/detalle-libro/detalle-libro.component';
-import { CPanelComponent } from './cpanel1/cpanel.component';
-import { CPanelHomeComponent } from './cpanel1/cpanel-home/cpanel-home.component';
-import { ClientComponent } from './client/client.component';
-import { CarritoCompraComponent } from './carrito-compra/carrito-compra.component';
-import { SugerenciaComponent } from './client/sugerencias/sugerencia/sugerencia.component';
-import { VerSugerenciasComponent } from './cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
+import { LoginComponent } from './modules/auth/login/login.component';
+import { HomeComponent } from './modules/home/home.component';
+import { MostrarCatalogoComponent } from './modules/catalogo/mostrar-catalogo/mostrar-catalogo.component';
+import { ListarUserComponent } from './admin/cpanel1/cpanel-user/listar-user/listar-user.component';
+import { RegisterComponent } from './modules/auth/register/register.component';
+import { DetalleLibroComponent } from './modules/catalogo/detalle-libro/detalle-libro.component';
+import { CPanelComponent } from './admin/cpanel1/cpanel.component';
+import { CPanelHomeComponent } from './admin/cpanel1/cpanel-home/cpanel-home.component';
+import { ModuleComponent } from './modules/module.component';
+import { CarritoCompraComponent } from './modules/carrito-compra/carrito-compra.component';
+import { SugerenciaComponent } from './modules/sugerencias/sugerencia/sugerencia.component';
+import { VerSugerenciasComponent } from './admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
 
 //route
 const routes: Routes = [
   {
     path: '',
-    component: ClientComponent,
+    component: ModuleComponent,
     children: [
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },

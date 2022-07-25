@@ -1,0 +1,52 @@
+header {
+  background-color: var(--pc-amparo-blue);
+  /* height: 64px; */
+}
+
+nav {
+  background-color: var(--pc-amparo-blue);
+}
+
+img {
+  height: 30px;
+}
+
+a,
+li {
+  color: var(--tce-1);
+}
+
+.icon-display {
+  transform: scale(2);
+  color: var(--tce-1);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--pc-hole-in-one);
+  --bs-btn-hover-bg: var(--pc-goldenrod-field);
+}
+
+.btn-outline-light {
+  --bs-btn-hover-color: var(--pc-amparo-blue);
+}
+
+.active {
+  background-color: var(--tce-1);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.active a {
+  color: var(--pc-amparo-blue);
+}
+
+li :hover {
+  color: var(--pc-goldenrod-field);
+}
