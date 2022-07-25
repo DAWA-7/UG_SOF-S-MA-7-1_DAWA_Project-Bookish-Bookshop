@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'mostrar-catalogo', component: MostrarCatalogoComponent },
+      { path: 'catalogo', component: MostrarCatalogoComponent },
       { path: 'detalle-libro', component: DetalleLibroComponent },
       { path: 'sugerencias', component: SugerenciaComponent },
       { path: 'carrito-compras', component: CarritoCompraComponent },
