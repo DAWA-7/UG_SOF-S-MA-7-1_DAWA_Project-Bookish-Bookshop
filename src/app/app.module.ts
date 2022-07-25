@@ -30,14 +30,10 @@ import { AgregarLibroComponent } from './admin/cpanel1/cpanel-libro/agregar-libr
 import { ListarLibroComponent } from './admin/cpanel1/cpanel-libro/listar-libro/listar-libro.component';
 import { CarritoCompraComponent } from './modules/carrito-compra/carrito-compra.component';
 import { CarritoSectionComponent } from './modules/carrito-compra/carrito-section/carrito-section.component';
-import {
-  VerSugerenciasComponent
-} from "./admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component";
-import {SugerenciaComponent} from "./modules/sugerencias/sugerencia/sugerencia.component";
-import {
-  AgregarSugerenciaComponent
-} from "./modules/sugerencias/agregar-sugerencia/agregar-sugerencia.component";
-
+import { VerSugerenciasComponent } from './admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
+import { SugerenciaComponent } from './modules/sugerencias/sugerencia/sugerencia.component';
+import { AgregarSugerenciaComponent } from './modules/sugerencias/agregar-sugerencia/agregar-sugerencia.component';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +58,7 @@ import {
     SugerenciaComponent,
     AgregarSugerenciaComponent,
     CarritoCompraComponent,
-    CarritoSectionComponent
+    CarritoSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +74,7 @@ import {
     NoticiasModule,
   ],
   entryComponents: [LoginComponent, HeaderComponent],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
