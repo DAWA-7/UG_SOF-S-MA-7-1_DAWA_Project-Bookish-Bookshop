@@ -1,9 +1,9 @@
 <div class="container">
-    <mat-form-field>
+    <!--<mat-form-field>
         <mat-label>Filtro</mat-label>
-        <input matInput appearance="outline" (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+        <input matInput appearance="outline" (keyup)="applyFilter(cadena)" placeholder="Buscar" #input>
         <mat-icon matPrefix>search</mat-icon>
-    </mat-form-field>
+    </mat-form-field>-->
 
     <mat-sidenav-container class="catalogo-container">
         <mat-sidenav class="sidenav" mode="side" opened>
@@ -20,9 +20,9 @@
 
         <mat-sidenav-content class="content">
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                <div class="libros row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
                     <app-libro class="col" [InputLibros]="libro"
-                        *ngFor="let libro of filtrarCategoria(listLibros, listCategorias)">
+                        *ngFor="let libro of filtrarCategoria(listLibros, listCategorias, categoria)">
                         {{libro}}
                     </app-libro>
                 </div>

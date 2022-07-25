@@ -1,3 +1,4 @@
+import { CatalogoService } from './../../../services/catalogo.service';
 import { Categoria } from './../../interfaces/categoria';
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../interfaces/book';
@@ -111,41 +112,21 @@ export class MostrarCatalogoComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private _service: CatalogoService) {}
 
   ngOnInit(): void {}
 
-  //para filtrar por nombre
-  applyFilter(event: Event) {
+  /*applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     //this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  }*/
 
-  filtrarCategoria(listLibros: Book[], listCategoria: Categoria[]) {
-    var id = listCategoria.find(
-      (categ) => categ.id_categoria == this.categoria
-    );
-    var libros = listLibros.filter(
-      (libro) => libro.id_categoria === id?.id_categoria
-    );
-
-    if (this.categoria > 0) {
-      libros;
-    } else if (this.categoria == 0) {
-      var libros = listLibros;
-    }
-
-    //var resultado = this.categoria >= 0 ? libros : listLibros;
-    console.log(this.categoria);
-    console.log(id);
-    console.log(libros);
-    /*
-    var lib = listLibros.filter((libro) => {
-      if (libro.id_categoria === id?.id_categoria) {
-        return libro;
-      }
-    });*/
-    return libros;
+  filtrarCategoria(
+    listLibros: Book[],
+    listCategoria: Categoria[],
+    categoria: number
+  ) {
+    return this._service.filtrarCategoria(listLibros, listCategoria, categoria);
   }
 
   mostrarCategoria(id: number) {

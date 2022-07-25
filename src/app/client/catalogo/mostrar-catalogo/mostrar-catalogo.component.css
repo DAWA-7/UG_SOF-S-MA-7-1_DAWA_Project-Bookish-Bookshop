@@ -1,6 +1,7 @@
 .catalogo-container {
   height: 100vh;
   background: #eee;
+  margin: 10px 0 10px 0;
 }
 
 .sidenav {
@@ -22,4 +23,8 @@ input {
 
 .content{
   padding: 10px;
+}
+
+app-libro{
+  margin-bottom: 20px;
 }
