@@ -45,6 +45,7 @@ export class ListarLibroComponent{
   //para filtrar por nombre
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   verDetalle(element: any){
