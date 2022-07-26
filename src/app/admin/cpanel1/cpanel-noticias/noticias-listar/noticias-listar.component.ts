@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class NoticiasListarComponent implements OnInit {
   //#region Variables
   dataSource = new MatTableDataSource<any>;
-  displayedColumns: string[] = ['id_libro', 'titulo', 'editorial', 'autor', 'precio', 'opciones'];
+  displayedColumns: string[] = ['id_libro', 'titulo', 'editorial', 'autor', 'opciones'];
   //#endregion
 
   constructor() {}
