@@ -57,4 +57,16 @@ export class ListarUserComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  deleteSuggestions(id: number) {
+    const index = this.listUsuario.findIndex(obj => obj.cedula === id);
+    if (index > -1) {
+      this.listUsuario.splice(index, 1);
+    }
+    this.updateDataSource();
+  }
+
+  updateDataSource() {
+    this.dataSource.data = this.listUsuario;
+  }
+
 }

@@ -52,7 +52,7 @@
               <mat-icon>edit</mat-icon>
               <span>Editar</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="deleteSuggestions(element.id_sugerencia)" >
               <mat-icon>delete</mat-icon>
               <span>Eliminar</span>
             </button>
