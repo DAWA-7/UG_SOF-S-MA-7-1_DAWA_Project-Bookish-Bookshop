@@ -29,8 +29,7 @@
     <h1>NOVEDADES</h1>
     <div class="col-md-8 ">
       <div class="row row-cols-4">
-        <app-libro class="col" [InputLibros]="libro"
-          *ngFor="let libro of filtrarCategoria(listLibros, listCategorias, 0)">
+        <app-libro class="col" [InputLibros]="libro" *ngFor="let libro of filtrarCategoria(listLibros, listCategorias, 0)">
           {{libro}}</app-libro>
       </div>
     </div>
@@ -40,7 +39,7 @@
     <div class="col-6 col-md-4">
       <h1>Noticias destacadas</h1>
 
-      <div class="card mb-3" style="max-width: 440px" *ngFor="let item of listNewsHighlight">
+      <div id="listNewsHighlight" class="card mb-3" style="max-width: 440px" *ngFor="let item of listNewsHighlight2 | slice:0:5">
         <div class="row">
           <div class="col-md-5">
             <img src="{{item.img}}" class="img-fluid rounded-start" alt="autora" />

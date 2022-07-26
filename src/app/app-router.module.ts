@@ -15,6 +15,7 @@ import { ModuleComponent } from './modules/module.component';
 import { CarritoCompraComponent } from './modules/carrito-compra/carrito-compra.component';
 import { SugerenciaComponent } from './modules/sugerencias/sugerencia/sugerencia.component';
 import { VerSugerenciasComponent } from './admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
+import { NoticiasListarComponent } from './admin/cpanel1/cpanel-noticias/noticias-listar/noticias-listar.component';
 
 //route
 const routes: Routes = [
@@ -36,20 +37,12 @@ const routes: Routes = [
     path: 'cpanel',
     component: CPanelComponent,
     children: [
-      {
-        path: '',
-        component: CPanelHomeComponent,
-      },
+      { path: '', component: CPanelHomeComponent },
       { path: 'libros', component: ListarLibroComponent },
       { path: 'agregar-libros', component: AgregarLibroComponent },
-      {
-        path: 'users',
-        component: ListarUserComponent,
-      },
-      {
-        path: 'sugerencias',
-        component: VerSugerenciasComponent,
-      },
+      { path: 'users', component: ListarUserComponent },
+      { path: 'sugerencias', component: VerSugerenciasComponent },
+      { path: 'noticias', component: NoticiasListarComponent },
     ],
   },
 ];

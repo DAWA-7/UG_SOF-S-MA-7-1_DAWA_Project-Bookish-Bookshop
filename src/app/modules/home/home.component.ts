@@ -2,6 +2,8 @@ import { Categoria } from '../../shared/interfaces/categoria';
 import { Component, OnInit } from '@angular/core';
 import { CatalogoService } from 'src/app/shared/services/catalogo.service';
 import { Book } from '../../shared/interfaces/book';
+import newsData from '../../../assets/json/News_MOCK_DATA.json';
+import { News } from '../noticias/interfaces/news';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import { Book } from '../../shared/interfaces/book';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  //#region Variable declaration
+  //#region Variables
 
   listCategorias: Categoria[] = [
     { id_categoria: 1, nombre_categoria: 'Ciencia Ficción' },
@@ -110,6 +112,8 @@ export class HomeComponent implements OnInit {
       imagen: 'ElCondeDeMontecristo.webp',
     },
   ];
+
+  listNewsHighlight2: News[] = newsData;
 
   listNewsHighlight: { img: string; title: string }[] = [
     {
