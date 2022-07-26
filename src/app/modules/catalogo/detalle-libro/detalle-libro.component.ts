@@ -1,5 +1,6 @@
 import { CatalogoService } from '../../../shared/services/catalogo.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-detalle-libro',
@@ -10,7 +11,7 @@ export class DetalleLibroComponent implements OnInit {
   InputLibros: any;
   newsItem: any;
 
-  constructor(private _service: CatalogoService) {}
+  constructor(private _service: CatalogoService, public datepipe: DatePipe) {}
 
   ngOnInit(): void {
     this._service.currentNewsItem.subscribe(
@@ -21,5 +22,13 @@ export class DetalleLibroComponent implements OnInit {
     );*/
     this.InputLibros = this.newsItem;
     //this.InputCategorias = this.newCategoria;
+  }
+
+  mostrarCategoria(id: number) {
+    return this._service.mostrarCategoria(id);
+  }
+
+  format(fecha: Date) {
+    return this.datepipe.transform(fecha, 'dd-MM-yyyy');
   }
 }

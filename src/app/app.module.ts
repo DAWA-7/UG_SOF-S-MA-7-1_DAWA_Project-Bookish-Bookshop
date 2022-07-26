@@ -33,6 +33,7 @@ import { CarritoSectionComponent } from './modules/carrito-compra/carrito-sectio
 import { VerSugerenciasComponent } from './admin/cpanel1/cpanel-sugerencias/ver-sugerencias/ver-sugerencias.component';
 import { SugerenciaComponent } from './modules/sugerencias/sugerencia/sugerencia.component';
 import { AgregarSugerenciaComponent } from './modules/sugerencias/agregar-sugerencia/agregar-sugerencia.component';
+import { DatePipe } from '@angular/common';
 import { NoticiasListarComponent } from './admin/cpanel1/cpanel-noticias/noticias-listar/noticias-listar.component';
 
 @NgModule({
@@ -76,7 +77,7 @@ import { NoticiasListarComponent } from './admin/cpanel1/cpanel-noticias/noticia
     NoticiasModule,
   ],
   entryComponents: [LoginComponent, HeaderComponent],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

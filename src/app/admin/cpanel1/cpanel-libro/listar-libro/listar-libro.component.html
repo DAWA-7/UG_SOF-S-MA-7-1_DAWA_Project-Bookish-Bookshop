@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6 col-sm-4 p-3">
-            <button mat-raised-button color="accent" (click)="openDialog()">Agregar libro</button>
+            <button mat-raised-button color="accent" (click)="openDialog('Agregar Libro')">Agregar libro</button>
         </div>
         <div class="col">
             <mat-form-field appearance="standard">
@@ -12,10 +12,6 @@
     </div>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-        <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-        <!-- Name Column -->
         <ng-container matColumnDef="id_libro">
             <th mat-header-cell *matHeaderCellDef> ID</th>
             <td mat-cell *matCellDef="let element"> {{element.id_libro}} </td>

@@ -19,6 +19,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AgregarLibroComponent {
   actionBtn: string = 'Guardar';
+  titulo: string = 'Agregar Libro';
   bookForm!: FormGroup;
   archivos: any = [];
 
@@ -39,8 +40,6 @@ export class AgregarLibroComponent {
     private dialogRef: MatDialogRef<AgregarLibroComponent>
   ) {}
 
-  //  @Inject(MAT_DIALOG_DATA) public editarDatos: any ,
-
   ngOnInit(): void {
     this.bookForm = this.formBuilder.group({
       id_libro: ['', Validators.required],
@@ -53,11 +52,11 @@ export class AgregarLibroComponent {
       precio: ['', Validators.required],
       fecha_publicacion: ['', Validators.required],
       id_categoria: ['', Validators.required],
-      imagen: ['', Validators.required],
     });
 
     if (this.editarDatos) {
       this.actionBtn = 'Actualizar';
+      this.titulo = 'Modificar Libro';
       this.bookForm.controls['id_libro'].setValue(this.editarDatos.id_libro),
         this.bookForm.controls['titulo'].setValue(this.editarDatos.titulo),
         this.bookForm.controls['autor'].setValue(this.editarDatos.autor),
@@ -77,8 +76,8 @@ export class AgregarLibroComponent {
         ),
         this.bookForm.controls['id_categoria'].setValue(
           this.editarDatos.id_categoria
-        ),
-        this.bookForm.controls['imagen'].setValue(this.editarDatos.imagen);
+        ); /*,
+        this.bookForm.controls['imagen'].setValue(this.editarDatos.imagen);*/
     }
   }
 
@@ -100,7 +99,7 @@ export class AgregarLibroComponent {
         precio: this.bookForm.value.precio,
         fecha_publicacion: this.bookForm.value.fecha_publicacion,
         id_categoria: this.bookForm.value.id_categoria,
-        imagen: this.bookForm.value.imagen,
+        imagen: 'this.bookForm.value.imagen',
       };
       this.router.navigate(['/cpanel']).then(() =>
         this.router.navigate(['/cpanel/libros'], {
@@ -120,7 +119,7 @@ export class AgregarLibroComponent {
         precio: this.bookForm.value.precio,
         fecha_publicacion: this.bookForm.value.fecha_publicacion,
         id_categoria: this.bookForm.value.id_categoria,
-        imagen: this.bookForm.value.imagen,
+        imagen: 'this.bookForm.value.imagen',
       };
       this.router.navigate(['/cpanel']).then(() =>
         this.router.navigate(['/cpanel/libros'], {

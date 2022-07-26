@@ -15,15 +15,15 @@ export class ListarLibroComponent{
 
   listLibros: Book[] = []
   displayedColumns: string[] = ['id_libro', 'titulo', 'editorial', 'autor', 'precio', 'opciones'];
-  //para llamar al matdialog
+  titulo:string = "";
   dataSource = new MatTableDataSource<any>;
 
   constructor(private catalogService: CatalogoService, public dialog: MatDialog) {
+    this.titulo = "Agregar Libro";
   }
 
-  openDialog() {
-
-    this.dialog.open(AgregarLibroComponent);
+  openDialog(titulo:string) {
+    this.dialog.open(AgregarLibroComponent,{data:titulo});
   }
 
   closeDialog() {
@@ -38,23 +38,18 @@ export class ListarLibroComponent{
 
   editLibro(element: any) {
     this.dialog.open(AgregarLibroComponent, {
-      data: element
-
+      data: element,
     })
-
-
   }
 
   //para filtrar por nombre
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   verDetalle(element: any){
     this.dialog.open(AgregarLibroComponent, {
       data: element
-
     })
   }
 
