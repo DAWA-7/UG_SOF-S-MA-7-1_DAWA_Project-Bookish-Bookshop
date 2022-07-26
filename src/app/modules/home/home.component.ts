@@ -4,6 +4,8 @@ import { CatalogoService } from 'src/app/shared/services/catalogo.service';
 import { Book } from '../../shared/interfaces/book';
 import newsData from '../../../assets/json/News_MOCK_DATA.json';
 import { News } from '../noticias/interfaces/news';
+import { NoticiasService } from 'src/app/shared/services/modules/noticias/noticias.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -115,37 +117,17 @@ export class HomeComponent implements OnInit {
 
   listNewsHighlight2: News[] = newsData;
 
-  listNewsHighlight: { img: string; title: string }[] = [
-    {
-      img: '@newsH/autora.jpg',
-      title:
-        'La autora ecuatoriana Victoria Vaccaro gana el Premio Internacional de poesía Ana María Iza',
-    },
-    {
-      img: 'assets/img/modules/noticias/highlight/lectura.jpg',
-      title:
-        'Los ecuatorianos leen un libro completo al año de media, según encuesta',
-    },
-    {
-      img: 'assets/img/modules/noticias/highlight/rodrigo.jpg',
-      title: 'Las crónicas que moldearon la vida del periodista Rodrigo Alonso',
-    },
-    {
-      img: 'assets/img/modules/noticias/highlight/ruiseñor.jpg',
-      title:
-        'Universo de Libros: El papá perfecto que soñaba con la igualdad que la escritora Harper Lee creó en ‘Matar a un ruiseñor’',
-    },
-    {
-      img: 'assets/img/modules/noticias/highlight/ulises.jpg',
-      title: 'El mundo cultural en los años del ‘Ulises’ de Joyce',
-    },
-  ];
   //#endregion
 
-  constructor(private _service: CatalogoService) {}
+  constructor(
+    private router: Router,
+    private _service: CatalogoService,
+    private serviceDataNews: NoticiasService
+  ) {}
 
   ngOnInit(): void {}
 
+  //#region Functions
   filtrarCategoria(
     listLibros: Book[],
     listCategoria: Categoria[],
@@ -153,4 +135,10 @@ export class HomeComponent implements OnInit {
   ) {
     return this._service.filtrarCategoria(listLibros, listCategoria, categoria);
   }
+
+  openArticle(itemDataSend: any) {
+    this.serviceDataNews.changeNewsItem(itemDataSend);
+    this.router.navigate(['noticias/articulo']);
+  }
+  //#endregion
 }

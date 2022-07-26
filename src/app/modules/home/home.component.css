@@ -19,3 +19,7 @@ app-libro {
   font-size: var(--fs-h4);
   line-height: var(--lg-h5);
 }
+
+#listNewsHighlight:hover {
+  box-shadow: 2px 2px;
+}
